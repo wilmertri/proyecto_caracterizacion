@@ -389,6 +389,7 @@
 				<input type="submit" class="btn btn-primary">
 			</div>	
 			</div>
-		</div>		
+		</div>	
+	</form>	
 </div>		
        

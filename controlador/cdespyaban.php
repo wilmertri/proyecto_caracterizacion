@@ -86,13 +86,8 @@
 		}
 	}
 	
-	// Actualizar datos
-	if($lugexpul && $munucipio && $fechexpul && $actorarmado && $ingaliment && $tpermanencia && $fpermanencia  && $solicitud && $rinclusion  && $usopredio && $perbienes && $tipobi && $relabien && $tipofam && $ideal && $ubicacion && $retorno && $medproteccion && $reciproteccion && $indemnizacion && $observacion &&  $actu) {
-		$ins -> updper($lugexpul , $munucipio , $fechexpul , $actorarmado , $ingaliment , $tpermanencia , $fpermanencia , $solicitud , $rinclusion , $usopredio , $perbienes , $tipobi , $relabien , $tipofam , $ideal , $ubicacion , $retorno , $medproteccion , $reciproteccion , $indemnizacion , $observacion);
-	}
-	// Insertar datos
-	if($lugexpul && $munucipio && $fechexpul && $actorarmado && $ingaliment && $tpermanencia && $fpermanencia  && $solicitud && $rinclusion  && $usopredio && $perbienes && $tipobi && $relabien && $tipofam && $ideal && $ubicacion && $retorno && $medproteccion && $reciproteccion && $indemnizacion && $observacion && $id && !$actu)
-	{ 
-		$ins-> insper($lugexpul , $munucipio , $fechexpul , $actorarmado , $ingaliment , $tpermanencia , $fpermanencia , $solicitud , $rinclusion , $usopredio , $perbienes , $tipobi , $relabien , $tipofam , $ideal , $ubicacion , $retorno , $medproteccion , $reciproteccion , $indemnizacion , $observacion , $id);
-	}
+	if($munucipio)
+		{
+			$ins -> actu_datos_despyaban($munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id);
+		}
 ?>

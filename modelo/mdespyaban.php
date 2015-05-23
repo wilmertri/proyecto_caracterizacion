@@ -80,6 +80,8 @@
 		
 		function actu_datos_despyaban($lugexpul, $munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $fpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id)
 		{
+			$sql = "UPDATE tbdatospersona SET lugexpulper='$municipio', fecexpulper='$fechexpul', actperact='$actorarmado', ingresoalimentos='$ingaliment', tiepermun='$tpermanencia' solrupruv='$solicitud', razrupruv='$rinclusion', usopreddes='$usopredio', perbienper='$perbienes', usopreddes='$tipobi', relbienper='$relabien', tipfamper='$tipofam', iderupruv='$ideal', lugarrehubi='$ubicacion', raznoret='$retorno', medprotper='$medproteccion', recprotper='$reciproteccion', indunivict='$indemnizacion', obsdesper='$observacion' WHERE  idpersona = '$id'";                    
+			$this->cons($sql);
 		}
 	
 		
