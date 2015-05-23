@@ -36,7 +36,7 @@
 		<div class="row">
 			<div class="form-group">
                 <input type="submit" class="btn btn-success" value="Actualizar">
-				<a href="home.php?var=91&id=<?php echo $dato1[0]['idpersona'] ?>" class="btn btn-success">Volver</a>
+				<a href="home.php?var=91&id=<?php echo $id?>" class="btn btn-success">Volver</a>
 				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
