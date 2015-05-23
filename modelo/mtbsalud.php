@@ -9,12 +9,11 @@
 		
 		function Mdatossalud()
 		{
-
 		}
 
 		function get_valor($codval)
 		{
-			return mostrar_nombre_valores($codval);
+			return $this->mostrar_nombre_valores($codval);
 		}
 				
 		/*
@@ -76,13 +75,11 @@
 			/* */ 
 		}
 
+
 		function ver_datos_salud($idpersona)
 		{
-			$sql = "SELECT afiliacionsalud, epsper, negserper, atesalposvicper, esqvacper FROM tbdatospersona WHERE idpersona = $idpersona";
-			$conexionBD = new conexion();
-			$conexionBD->conectarBD();
-			$datos = $conexionBD->ejeCon($sql,0);
-			return $datos;
+			$sql = "SELECT afiliacionsalud, epsper, negserper, atesalposvicper, esqvacper, conodoper, disconfarm, comdiaper FROM tbdatospersona WHERE idpersona = '$idpersona'";
+			return $this->SeleccionDatos($sql);
 		}
 
 		function cons ($sentencia_sql) 
@@ -91,8 +88,9 @@
 			$conexionBD -> conectarBD();
 			$conexionBD -> ejeCon($sentencia_sql, 1);
 		}
-		function seleccionar_eps()        {
-            $sql = "SELECT * FROM tbeps";
+		function seleccionar_eps($eps)        
+		{
+            $sql = "SELECT `codeps`,`nomeps` FROM `tbeps` WHERE `codeps`= '".$eps."';";
             return $this->SeleccionDatos($sql);
         }
 	} 

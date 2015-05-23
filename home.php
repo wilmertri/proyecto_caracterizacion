@@ -218,6 +218,22 @@
           if ($variable==55) {
               include("vista/vtbsalud.php");
           }
+          if ($variable==56) {
+              include("vista/vconsultatbsalud.php");
+          }
+          if ($variable==57) {
+              include("vista/vactualizatbsalud.php");
+          }
+
+          if ($variable==58) {
+              include("vista/vconsultaRehabi.php");
+          }
+          
+          if ($variable==59) {
+              include("vista/vactualizaRehabi.php");
+          }
+          
+
           if ($variable==70) {
               include("vista/vmenudatosper.php");
           }
