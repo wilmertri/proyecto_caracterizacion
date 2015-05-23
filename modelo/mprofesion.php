@@ -9,22 +9,27 @@
 		    $sql= "INSERT INTO tbprofesion(nombreprof) VALUES ('".$nombreprof."');";
 			$this-> cons($sql);
 			
-		function updedu ($idprofesion,$nombreprof) // CRUD - ESTO ES LA U= actualizar
+		function updprof ($idprofesion,$nombreprof) // CRUD - ESTO ES LA U= actualizar
 			{
 				$sql= "UPDATE tbprofesion SET nombreprof='".$nombreprof."' WHERE idprofesion='".$idprofesion."';";
 				$this-> cons($sql);
 			}
-		function deledu($codcapper) // CRUD - ESTO ES LA D= eliminar
+		function delprof($idprofesion) // CRUD - ESTO ES LA D= eliminar
 			{
-				$sql= "DELETE FROM tbcapacitacion WHERE codcapper='".$codcapper."';";
+				$sql= "DELETE FROM tbprofesion WHERE idprofesion='".$idprofesion."';";
 				$this-> cons($sql);
 			}	
-		function cons($c)
-			{
-				$conexionBD= new conexion();   // llama toda la clase llamada conexion de conexion.php
-				$conexionBD-> conectarBD(); // asi llame la clase debo especificar lo que deseo llamar en este caso conectarBD y ejecon
-				$conexionBD-> ejecon($c,1); 
-			}	   
+		function selprof() 
+		{
+			    $sql = "SELECT * FROM tbprofesion;";
+				return $this->SeleccionDatos($sql);
+		}
+		
+		function selprof1($idprofesion) 
+		{
+			    $sql = "SELECT * FROM tbprofesion WHERE idprofesion= '".$idprofesion"';";
+				return $this->SeleccionDatos($sql);
+		}
 		
 	}		
 ?>		

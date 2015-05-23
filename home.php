@@ -271,7 +271,7 @@
           }
 		      if ($variable==101) 
           {
-              include("vista/vdatosacademicos.php");
+              include("vista/vprofesion.php");
           }
       ?>  
     </div>                                                

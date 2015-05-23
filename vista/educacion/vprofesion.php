@@ -1,34 +1,16 @@
 <?php
-	include ("controlador/ceducacion.php");
-	include("vista/conexion_sqlserver.php");
+	include ("controlador/cprofesion.php");
+
 ?>
 
-<h1>Ingresar Datos academicos</h1>
-<div class="forms1">
-    <form name="form1" action="home.php?var=3" method="post">
+<h1>Ingresar Profesion</h1>
+<div class="forms">
+    <form name="form1" action="home.php?var=101" method="post">
+	
 		<div class="row">
-            <div class="form-group col-md-6">
-                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
-            </div>
-			<div class="form-group col-lg-6">
-				<input type="hidden" name="idpersona" value="<?php echo $dato1[0]['idpersona'] ?>" />
-				<input type="hidden" name="actu" value="actu" />
-			</div>
-		</div>
-		
-		<div class="row">
-            <div class="form-group col-md-6">
-                <label for="Nivel Educativo">Nivel Educativo Alcanzado (Último año o grado aprobado) <span style="color:red;">*</span></label>
-                <select name="ultgra" class="form-control" style="text-transform:uppercase;">
-					<option value = 0> Seleccione una opción </option>
-					<?php 
-						for ($i=0; $i < count($ultgra); $i++){
-					?>
-					<option value ="<?php echo $ultgra[$i]['codval'] ?>" ><?php echo $ultgra[$i]['nomval'] ?></option>
-					<?php 
-						} 
-					?>
-				</select>
+            <div class="form-group">
+                <label for="Nombre Profesion">Profesión <span style="color:red;">*</span></label>
+                <input name="nomprof" type="text" class="form-control">
             </div>
 			
 			<div class="form-group col-md-6 center">
