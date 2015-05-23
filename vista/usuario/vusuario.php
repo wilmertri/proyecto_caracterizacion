@@ -1,7 +1,7 @@
 <?php
         /*  
         *   @author: Luis M Morales B
-        *   @Version: V4 16/05/15
+        *   @Version: V5 23/05/15
             unificada        */
 
 	include("controlador/cusuario.php");
@@ -51,7 +51,7 @@
         </div>
         <div class="row">    
             <div class="form-group col-lg-6">
-                <input type="submit" class="btn btn-primary" value="Insertar">
+                <input type="submit" class="btn btn-success" value="Insertar">
             </div>
         </div>
     </form>
@@ -84,4 +84,3 @@
        <?php } ?>       
     </table>
 </div>    
-    <!--se cambian doc por num doc, usu por nom usua por y mail por corr elec
