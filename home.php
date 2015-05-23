@@ -216,13 +216,13 @@
               include("vista/usuario/vediusuario.php");
           }
           if ($variable==55) {
-              include("vista/vtbsalud.php");
+              include("vista/salud/vtbsalud.php");
           }
           if ($variable==56) {
-              include("vista/vconsultatbsalud.php");
+              include("vista/salud/vconsultatbsalud.php");
           }
           if ($variable==57) {
-              include("vista/vactualizatbsalud.php");
+              include("vista/salud/vactualizatbsalud.php");
           }
 
           if ($variable==58) {
