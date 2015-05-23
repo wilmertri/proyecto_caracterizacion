@@ -2,7 +2,7 @@
 	include("modelo/mtbsalud.php"); 
 	$ins= new Mdatossalud();
 	
-	$id	= isset($_GET['pr']) ? $_GET['pr']:NULL;
+	$id	= isset($_GET['id']) ? $_GET['id']:NULL;
 
 	$datossalud = $ins->ver_datos_salud($id);
 	

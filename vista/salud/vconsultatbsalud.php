@@ -40,7 +40,7 @@
 	</table>
 	<table class="table">	
 		<tr>
-			<td><a href="home.php?pr=<?= $id ?>&var=70" class="btn btn-success">Volver</a></td>
+			<td><a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a></td>
 			<td><a href="home.php?var=34&id=<?php echo $id;?>" class="btn btn-success">Discapacidad</a></td>
 			<td><a href="home.php?var=57&id=<?php echo $id;?>" class="btn btn-success">Rehabilitacion</a></td>
 		</tr>

@@ -22,7 +22,7 @@
 	// $a_reh1 		= isset($_POST['reh1']) ? $_POST['reh1']:NULL;
 	// $a_reh2 		= isset($_POST['reh2']) ? $_POST['reh2']:NULL;
 	$a_comdiaper 	= isset($_POST['comdiaper']) ? $_POST['comdiaper']:NULL;
-	$a_id			= isset($_GET['pr']) ? $_GET['pr']:NULL;
+	$a_id			= isset($_GET['id']) ? $_GET['id']:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 
 	$sissal 		= $ins->get_sistema_salud();
