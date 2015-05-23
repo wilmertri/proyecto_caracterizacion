@@ -2,13 +2,11 @@
 	include ("modelo/mdespyaban.php");
 	$ins = new Mdespyaban();
 	
-	$lugexpul 		= isset($_POST["depto"]) ? $_POST["depto"]:NULL;
 	$munucipio 		= isset($_POST["codubi"]) ? $_POST["codubi"]:NULL;
 	$fechexpul 		= isset($_POST["fechadeexpulsion"]) ? $_POST["fechadeexpulsion"]:NULL;
 	$actorarmado 	= isset($_POST["actorarmado"]) ? $_POST["actorarmado"]:NULL;
 	$ingaliment 	= isset($_POST["ingresoalimentos"]) ? $_POST["ingresoalimentos"]:NULL;
 	$tpermanencia 	= isset($_POST["tieper"]) ? $_POST["tieper"]:NULL;
-	$fpermanencia 	= isset($_POST["factpermanencia"]) ? $_POST["factpermanencia"]:NULL;
 	$solicitud 		= isset($_POST["solicitud"]) ? $_POST["solicitud"]:NULL;
 	$rinclusion 	= isset($_POST["razoninclusion"]) ? $_POST["razoninclusion"]:NULL;
 	$usopredio 		= isset($_POST["usoprediodespues"]) ? $_POST["usoprediodespues"]:NULL;

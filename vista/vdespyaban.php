@@ -121,18 +121,22 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6 col-md-6">
-			<br>
-                <label for="factores de permanencia">Factores de permanencia en el municipio</label>
-                <select name="factpermanencia" class="form-control" style="text-transform:uppercase;">
-				<option value=0> Seleccione una opción </option>
-					<?php 
-						for ($i=0; $i < count($factores_permanencia); $i++){
-					?>
-					<option value ="<?php echo $factores_permanencia[$i]['idfactor'] ?>" ><?php echo $factores_permanencia[$i]['nomfact'] ?></option>
-					<?php 
-						} 
-					?>
-				</select>
+			<label for="Ideal RUPD">Para todos los miembros del hogar incluidos en el RUPD/RUV Su ideal es?</label>
+					<select name="ideal" onchange="javascript:mostrar(this.value);" class="form-control">
+								<option value=0> Seleccione una opción </option>>
+								
+						   
+								<?php 
+								//Select
+								//$gen = $ins->selpar();
+								for ($i=0; $i < count($ideal_rupd); $i++){
+								?>
+						
+								<option value="<?php echo $ideal_rupd[$i]['codval'] ?>" ><?php echo $ideal_rupd[$i]['nomval'] ?></option>
+						
+								<?php } ?>
+					</select>
+			
             </div>
 			<div class="form-group col-lg-6 col-md-6">
 				<label for="Solicitud RUPD/RUV">Quien solicito la inclucion en el RUPD/RUV:</label>
@@ -250,29 +254,7 @@
 				</select>
 			</div>
 		</div>
-		<div class="row">
-			<div class="form-group col-lg-6 col-md-6">
-					<label for="Ideal RUPD">Para todos los miembros del hogar incluidos en el RUPD/RUV Su ideal es?</label>
-					<select name="ideal" onchange="javascript:mostrar(this.value);" class="form-control">
-								<option value=0> Seleccione una opción </option>>
-								
-						   
-								<?php 
-								//Select
-								//$gen = $ins->selpar();
-								for ($i=0; $i < count($ideal_rupd); $i++){
-								?>
-						
-								<option value="<?php echo $ideal_rupd[$i]['codval'] ?>" ><?php echo $ideal_rupd[$i]['nomval'] ?></option>
-						
-								<?php } ?>
-					</select>
-				</div>
-				<div class="form-group col-lg-6 col-md-6">
-
-				</div>
-			</div>
-			<div class="row">
+					<div class="row">
 				<div class="form-group col-lg-12 center">
 					<label for="Lugar de expedicion">Si seleccionó reubicación a que lugar se trasladaría</label> 
 				</div> 
