@@ -1,0 +1,125 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+body
+{
+    background-color: #E6E6E6; 
+}
+
+#color{/* etiqueta que referencia el color verde del fondo del home "menu" */
+background-color: #ccea8a;
+}
+#banner{
+    width: 90%;
+    margin-left: 4%;
+	margin-top: 4%;
+}
+
+#logo{                               /* = Div imagen escudo alcaldia */
+    padding: 2%;
+	margin: auto;
+	text-align: center;
+}
+
+#contenido{		
+    margin-top: 50px;
+    background-color: #ccea8a;				/* = Div en donde se cargaria la informacion de acuerdo al menu */
+	padding-bottom:10px;
+	padding-top: 5px;
+	margin-left: 18%;
+	/*height: 800px;/* AJUSTE PARA QUE EL CONTENIDO QUEDE A LA MIS MA ALTURA DE MENU IZQUIERDO*/
+}
+
+#dropdown {                       /* = Div Contenedor del menu izquierdo */
+	 padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	padding-top: 85px;
+    
+								/*background-color: red;*/ 
+}
+
+#dropdown.toggled {
+    padding-left: 500px;
+	}
+
+#sidebar-dropdown {/* propiedades del menu izquierdo */
+
+    position: absolute;/* cambio de posicion de fixed a absolute*/
+    left: 250px;
+    width: 0;
+    height: 100%;/* AJUSTE PARA QUE ESTE MENU QUEDE A LA MIS MA ALTURA DE CONTENIDO*/
+    margin-left: -250px;
+    margin-top: 30px;
+    overflow-y: auto;
+    background-color: #a6c957;
+ 
+     
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	
+}
+
+#dropdown.toggled #sidebar-dropdown {
+    width: 600px;
+}
+
+#page-content-dropdown {
+	width: 100%;
+    padding: 15px;
+						
+}
+
+#dropdown.toggled #page-content-dropdown {
+    position: absolute;
+    margin-right: -220px;
+}
+
+.container{
+padding-bottom: 1%;
+padding-top: 1%;
+
+
+}
+
+/* Sidebar Styles */
+
+
+
+@media(min-width:768px) {  /* Ajuste para resolucion */
+    #dropdown {
+        padding-left: 250px;
+    }
+
+    #dropdown.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-dropdown { /* tamaño del menu izquierdo*/
+        width: 18%;
+		
+    }
+
+    #dropdown.toggled #sidebar-dropdown {
+        width: 0;
+    }
+
+    #page-content-dropdown {
+        padding: 20px;
+    }
+
+    #dropdown.toggled #page-content-dropdown{
+        position: relative;
+        margin-right: 0;
+    }
+
+}

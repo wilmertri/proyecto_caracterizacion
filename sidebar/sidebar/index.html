@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <!-- Código para la barra de navegación de la parte superior.  -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+            <!-- Aca va el logo que se colocará a la página: -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#ppal">WEBCOW</a>
+            </div>
+
+            <!--Este código muestra la barra de navegación de la derecha. -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#sec1">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#sec2">Nuestros Servicios</a>
+                    </li>
+                    <li>
+                        <a href="#">Contactenos</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+    <!--Acá termina la barra de navegación -->
+
+
+    <div id="dropdown">
+
+        <!-- Sidebar -->
+        <div id="sidebar-dropdown">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>    
+			<div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Informacion <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Informacion 1</a></li>
+                 <li><a href="#">Informacion 2</a></li>
+                 <li><a href="#">Informacion 3</a></li>
+                 <li><a href="#">Informacion 4</a></li>
+            </ul>
+           </div>
+       
+                <li>
+					<div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Registro <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Registro 1</a></li>
+                 <li><a href="#">Registro 2</a></li>
+                 <li><a href="#">Registro 3</a></li>
+                 <li><a href="#">Registro 4</a></li>
+            </ul>
+           </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Eventos <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Eventos 1</a></li>
+                 <li><a href="#">Eventos 2</a></li>
+                 <li><a href="#">Eventos 3</a></li>
+                 <li><a href="#">Eventos 4</a></li>
+            </ul>
+           </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Formularios <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Formularios 1</a></li>
+                 <li><a href="#">Formularios 2</a></li>
+                 <li><a href="#">Formularios 3</a></li>
+                 <li><a href="#">Formularios 4</a></li>
+            </ul>
+           </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Servicios <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Servicios 1</a></li>
+                 <li><a href="#">Servicios 2</a></li>
+                 <li><a href="#">Servicios 3</a></li>
+                 <li><a href="#">Servicios 4</a></li>
+            </ul>
+           </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+               <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                Otros <span class="caret"></span>
+               </button>
+			 <ul class="dropdown-menu" role="menu">
+                 <li><a href="#">Otros 1</a></li>
+                 <li><a href="#">Otros 2</a></li>
+                 <li><a href="#">Otros 3</a></li>
+                 <li><a href="#">Otros 4</a></li>
+            </ul>
+           </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-dropdown">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Simple Sidebar</h1>
+                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
