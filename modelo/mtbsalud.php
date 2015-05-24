@@ -65,8 +65,7 @@
 		/*
 			Función para la actualización de los datos Salud
 		*/
-		function actu_datos_salud($idpersona, $sissal, $eps, $negser, $atevicper, $esqvacper, $conodoper, $disconfarm, 
-			$comdiaper)
+		function actu_datos_salud($idpersona, $sissal, $eps, $negser, $atevicper, $esqvacper, $conodoper, $disconfarm, $comdiaper)
 		{
 			$sql = "UPDATE tbdatospersona SET afiliacionsalud='$sissal', epsper='$eps', negserper='$negser', atesalposvicper='$atevicper', esqvacper='$esqvacper', conodoper='$conodoper', disconfarm='$disconfarm', comdiaper='$comdiaper'
 						WHERE idpersona = '$idpersona'";
