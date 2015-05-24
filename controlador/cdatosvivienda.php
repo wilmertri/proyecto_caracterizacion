@@ -15,6 +15,7 @@
 	$serbas 		= isset($_POST['servibas']) ? $_POST['servibas']:NULL;
 	$estrato		= isset($_POST['estrato']) ? $_POST['estrato']:NULL;
 	$id				= isset($_GET['id']) ? $_GET['id']:NULL;
+	$valid	= 0;
 
 
 	$tipovivienda1 		= $ins->get_tipo_vivienda();
@@ -31,6 +32,7 @@
 	if ($tipovivienda) 
 	{
 		$ins->actu_datos_vivienda($tipovivienda, $matpar, $matpis, $mattec, $zonrie, $relviv, $numhabviv, $numhabhab, $numperhabviv, $estrato, $id);
+		$valid = 1;
 	}
 
 	if($serbas)

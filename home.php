@@ -232,36 +232,31 @@
           if ($variable==59) {
               include("vista/vactualizaRehabi.php");
           }
-          
-
           if ($variable==70) {
               include("vista/vmenudatosper.php");
           }
           if ($variable==75) {
-              include("vista/vdatosvivienda.php");
+              include("vista/datosvivienda/vdatosvivienda.php");
           }
           if ($variable==76) {
-              include("vista/vverdatosvivienda.php");
-          }
-          if ($variable==85) {
-              //Luis Miguel se cambio por el 50 al 55
+              include("vista/datosvivienda/vverdatosvivienda.php");
           }
           if ($variable==90) {
               //Jorge
-			  include("vista/actividadeconomica/vactividadeconomica.php");
+			        include("vista/actividadeconomica/vactividadeconomica.php");
           }
-		   if ($variable==91) {
-			  include("vista/actividadeconomica/vdatosactividadeconomica.php");
+		      if ($variable==91) {
+			        include("vista/actividadeconomica/vdatosactividadeconomica.php");
           }
-		  if ($variable==92) {
-			  include("vista/actividadeconomica/vingreso.php");
+		      if ($variable==92) {
+			        include("vista/actividadeconomica/vingreso.php");
           }
-		  if ($variable==93) {
-			  include("vista/actividadeconomica/vingreso1.php");
+		      if ($variable==93) {
+			        include("vista/actividadeconomica/vingreso1.php");
           }
           if ($variable==95) 
   		    {
-                //Andrea
+              //Andrea
   			      include("vista/vdespyaban.php");
           }
           if ($variable==100) 

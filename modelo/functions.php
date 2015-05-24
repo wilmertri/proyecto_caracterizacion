@@ -64,4 +64,15 @@
                     $datos = $conexionBD -> ejeCon($consulta, 0);
                     return $datos;
             }
+
+            /*
+             * Función para la validación del ingreso de la información
+             */
+
+            public function validacion_ingreso()
+            {
+                echo "<script>alert('Información actualizada con exito!')</script>";
+            }
+
+
         }
