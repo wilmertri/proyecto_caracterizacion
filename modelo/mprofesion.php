@@ -6,9 +6,10 @@
 		 function mprofesion(){} // CRUD - ESTO ES LA C= CREAR
 		 
 		 function insprof ($nombreprof) 
+		    {
 		    $sql= "INSERT INTO tbprofesion(nombreprof) VALUES ('".$nombreprof."');";
 			$this-> cons($sql);
-			
+			}
 		function updprof ($idprofesion,$nombreprof) // CRUD - ESTO ES LA U= actualizar
 			{
 				$sql= "UPDATE tbprofesion SET nombreprof='".$nombreprof."' WHERE idprofesion='".$idprofesion."';";
@@ -27,7 +28,7 @@
 		
 		function selprof1($idprofesion) 
 		{
-			    $sql = "SELECT * FROM tbprofesion WHERE idprofesion= '".$idprofesion"';";
+			    $sql = "SELECT * FROM tbprofesion WHERE idprofesion= '".$idprofesion."';";
 				return $this->SeleccionDatos($sql);
 		}
 		
