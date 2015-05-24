@@ -2,7 +2,7 @@
 	include ("modelo/mdespyaban.php");
 	$ins = new Mdespyaban();
 	
-	$munucipio 		= isset($_POST["codubi"]) ? $_POST["codubi"]:NULL;
+	$munucipio 		= isset($_POST["codubiexp"]) ? $_POST["codubiexp"]:NULL;
 	$fechexpul 		= isset($_POST["fechadeexpulsion"]) ? $_POST["fechadeexpulsion"]:NULL;
 	$actorarmado 	= isset($_POST["actorarmado"]) ? $_POST["actorarmado"]:NULL;
 	$ingaliment 	= isset($_POST["ingresoalimentos"]) ? $_POST["ingresoalimentos"]:NULL;
@@ -15,7 +15,7 @@
 	$relabien	 	= isset($_POST["relacionconelbien"]) ? $_POST["relacionconelbien"]:NULL;
 	$tipofam 		= isset($_POST["tipodefamilia"]) ? $_POST["tipodefamilia"]:NULL;
 	$ideal 			= isset($_POST["ideal"]) ? $_POST["ideal"]:NULL;
-	$ubicacion	 	= isset($_POST["ubicacionreubicacion"]) ? $_POST["ubicacionreubicacion"]:NULL;
+	$ubicacion	 	= isset($_POST["codubinac"]) ? $_POST["codubinac"]:NULL;
 	$retorno 		= isset($_POST["razonderetorno"]) ? $_POST["razonderetorno"]:NULL;
 	$medproteccion 	= isset($_POST["medidasdeproteccion"]) ? $_POST["medidasdeproteccion"]:NULL;
 	$reciproteccion	= isset($_POST["recibiomedidasdeproteccion"]) ? $_POST["recibiomedidasdeproteccion"]:NULL;
@@ -37,8 +37,25 @@
 	$tipo_de_familia		= $ins -> get_tipo_de_familia();
 	$ideal_rupd				= $ins -> get_ideal_rupd();
 	$razon_retorno			= $ins -> get_razon_retorno();
-
-	
+    echo	$munucipio		;	
+	echo 	$fechexpul 		;
+	echo 	$actorarmado	;
+	echo	$ingaliment 	;
+	echo	$tpermanencia	;
+	echo	$solicitud 		;
+	echo	$rinclusion 	;
+	echo	$usopredio 		;
+	echo	$perbienes 		;
+	echo	$tipobi 		;
+	echo	$relabien	 	;
+	echo	$tipofam 		;
+	echo	$ideal 			;
+	echo	$ubicacion	 	;
+	echo	$retorno 		;
+	echo	$medproteccion 	;
+	echo	$reciproteccion	;
+	echo	$indemnizacion 	;
+	echo 	$observacion 	;
 	
 	if ($actu) {
 		if ($actorarmado ==0) {
@@ -86,6 +103,6 @@
 	
 	if($munucipio)
 		{
-			$ins -> actu_datos_despyaban($munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id);
+			$ins->actu_datos_despyaban($munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id);
 		}
 ?>

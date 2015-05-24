@@ -25,7 +25,7 @@
 		};
 		$.ajax({
 			data: parametros,
-			url: 'vista/miscript4.php',
+			url: 'vista/miscript2.php',
 			type: 'post',
 			success: function (response) {
 	 			$("#reloadMunicipioreub").html(response);
@@ -64,7 +64,7 @@
 			<div class="form-group col-lg-6 col-md-6">
                 <label for="Municipio">Municipio <span style="color:red;">*</span></label>
                 <div id="reloadMunicipioexp">
- 					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
+ 					<select name="codubiexp" id="id_estado" class="form-control" style="text-transform:uppercase;">
 						<option value="0">Seleccione municipio</option>
  					</select>
  				</div>
@@ -262,7 +262,7 @@
 			<div class="row">
 				<div class="form-group col-lg-6 col-md-6">
 					<label for="Departamento">Departamento <span style="color:red;">*</span></label>
-					<select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;">
+					<select name="depto" onchange="javascript:RecargarCiudadesReubi(this.value);" class="form-control" style="text-transform:uppercase;">
 						<option value="0">Seleccione Departamento</option>
 						<?php
 						
@@ -281,7 +281,7 @@
 				<div class="form-group col-lg-6 col-md-6">
 					<label for="Municipio">Municipio <span style="color:red;">*</span></label>
 					<div id="reloadMunicipioreub">
-						<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
+						<select name="codubinac" id="id_estado" class="form-control" style="text-transform:uppercase;">
 							<option value="0">Seleccione municipio</option>
 						</select>
 					</div>
