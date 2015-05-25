@@ -1,4 +1,4 @@
-<?php   //include("modelo/mseguridad.php"); ?>
+<?php   include("modelo/mseguridad.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,11 +176,13 @@
 		      if ($variable==29) {
               include("vista/vtbhechosvict1.php");
           }
-          if ($variable==30) {
-              include("vista/vtbfactoresvict.php");
+          if ($variable==30) 
+          {
+              include("vista/despojoyabandono/vfactoresperm.php");
           }
-          if ($variable==31) {
-              include("vista/vtbfactoresvict1.php");
+          if ($variable==31) 
+          {
+              include("vista/despojoyabandono/vfactxidper.php");
           }
           if ($variable==32) {
               include("vista/vdiscapacidad.php");

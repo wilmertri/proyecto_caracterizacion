@@ -30,10 +30,9 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="home.php?var=12">Insertar EPS</a></li>
-							<li><a href="home.php?var=20">Insertar servicio publico</a></li>
-							<li><a href="home.php?var=22">Insertar tipo ingreso</a></li>
-							<li><a href="home.php?var=28">Insertar hechos victimizantes</a></li>
-							<li><a href="home.php?var=30">Insertar factores</a></li>
+							<li><a href="home.php?var=20">Insertar Servicio publico</a></li>
+							<li><a href="home.php?var=22">Insertar Tipo ingreso</a></li>
+							<li><a href="home.php?var=30">Insertar factores de permanencia</a></li>
 							<!--<li><a href="home.php?var=40">Insertar valor parametro</a></li>-->
 						</ul>
 					</li>
