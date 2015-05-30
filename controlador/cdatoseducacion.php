@@ -6,39 +6,50 @@
 
 	$datoseducacion = $ins->ver_datos_educacion($id);
 	
-	if ($datoseducacion[0]['ultracurper']) 
+	if ($datoseducacion[0]['ultgracurper']) 
 	{
-		$verUltimogrado	= $ins->get_valor($datoseducacion[0]['ultracurper']);
-		$Ultimogrado		= $verUltimogrado[0]['nomval'];	
+		$verUltimogrado	= $ins->get_nivel_educativo_alcanzado($datoseducacion[0]['ultgracurper']);
+		$ultimoGrado		= $verUltimogrado[0]['nomval'];	
 	}
 	else
 	{
-		$Ultimogrado = "Sin registro";
+		$ultimoGrado = "Sin registro";
 	}
 	if ($datoseducacion[0]['titobtper']) 
 	{
-		$verTitulo	= $ins->get_valor($datoseducacion[0]['titobtper']);
-		$Titulo		= $verTitulo[0]['nomval'];	
+		$verTitulo	= $ins->get_titulo_obtenido($datoseducacion[0]['titobtper']);
+		$titulo		= $verTitulo[0]['nombreprof'];	
 	}
 	else
 	{
-		$Titulo = "Sin registro";
+		$titulo = "Sin registro";
 	}
-	if ($datoseducacion[0]['trabajoper']) 
+	if ($datoseducacion[0]['matriper']) 
 	{
-		$TrabajoPer	= $datoseducacion[0]['trabajoper'];
+		$verMatricula	= $ins->get_valor($datoseducacion[0]['matriper']);
+		$matricula		= $verMatricula[0]['nomval'];	
 	}
 	else
 	{
-		$TrabajoPer = "Sin registro";
+		$matricula = "Sin registro";
 	}
 
-	if ($datoseducacion[0]['ingmenper']) 
+	if ($datoseducacion[0]['nomatriper']) 
 	{
-		$IngresoMensual	= $datoseducacion[0]['ingmenper'];
+		$verNomatri	= $ins->get_asistencia_estudios($datoseducacion[0]['nomatriper']);
+		$noMatri		= $verNomatri[0]['opcion'];	
 	}
 	else
 	{
-		$IngresoMensual = "Sin registro";
-	}   
+		$noMatri = "Sin registro";
+	}
+	if ($datoseducacion[0]['termcurant']) 
+	{
+		$verTerminoaño	= $ins->get_valor($datoseducacion[0]['termcurant']);
+		$terminoAño		= $verTerminoaño[0]['nomval'];	
+	}
+	else
+	{
+		$terminoAño = "Sin registro";
+	}
 ?>

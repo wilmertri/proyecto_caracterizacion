@@ -8,7 +8,7 @@
 		$nomatriper= isset($_POST["nomatriper"]) ? $_POST["nomatriper"]:null;
 		$termcurant= isset($_POST["termcurant"]) ? $_POST["termcurant"]:null;
 		$id			= isset($_GET['id']) ? $_GET['id']:NULL;
-
+		
 		$ultgr  		= $ins->get_nivel_educativo_alcanzado();
 		$titobtpe 		= $ins->get_titulo_obtenido();
 		$matripe 		= $ins->get_matriculado();
