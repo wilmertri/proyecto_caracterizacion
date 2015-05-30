@@ -264,11 +264,19 @@
           if ($variable==100) 
           {
               //Jhon Edison
-			        include("vista/educacion/veducacion.php");
+			    include("vista/educacion/veducacion.php");
           }
-		      if ($variable==101) 
+				if ($variable==101) 
           {
-              include("vista/educacion/vprofesion.php");
+				include("vista/educacion/vdatoseducacion.php");
+          }
+				if ($variable==104) 
+          {
+				include("vista/educacion/vprofesion.php");
+          }
+				if ($variable==105) 
+          {
+				include("vista/educacion/vprofesion1.php");
           }
       ?>  
     </div>                                                

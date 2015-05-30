@@ -33,22 +33,16 @@
 			return $this->seleccionar_valores_de_parametro(25);
 		   }
 			
-		function updedu ($idpersona,$ultgra,$titobtper,$matriper,$nomatriper,$termcurant) // CRUD - ESTO ES LA U= actualizar
+		function actu_datos_educacion ($idpersona,$ultgra,$titobtper,$matriper,$nomatriper,$termcurant)
 			{
 				$sql= "UPDATE tbdatospersona SET ultracurper='".$ultgra."' , titobtper='".$titobtper."' , matriper='".$matriper."',nomatriper='".$nomatriper."' , termcurant='".$termcurant."' where idpersona='".$idpersona."' ;";	
 				$this-> cons($sql);
 			}
-		function deledu($codcapper) // CRUD - ESTO ES LA D= eliminar
+		function ver_datos_actividad($idpersona)
 			{
-				$sql= "DELETE FROM tbcapacitacion WHERE codcapper='".$codcapper."';";
-				$this-> cons($sql);
-			}	
-		function cons($c)
-			{
-				$conexionBD= new conexion();   // llama toda la clase llamada conexion de conexion.php
-				$conexionBD-> conectarBD(); // asi llame la clase debo especificar lo que deseo llamar en este caso conectarBD y ejecon
-				$conexionBD-> ejecon($c,1); 
-			}	   
+				$sql = "SELECT ultracurper, titobtper, matriper, nomatriper, termcurant FROM tbdatospersona WHERE idpersona = $idpersona";			
+            return $this->SeleccionDatos($sql);
+			}		   
 		
 	}		
 ?>		
