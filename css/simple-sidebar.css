@@ -32,7 +32,7 @@ background-color: #ccea8a;
 	padding-bottom:10px;
 	padding-top: 5px;
 	margin-left: 18%;
-	height: 800px;/* AJUSTE PARA QUE EL CONTENIDO QUEDE A LA MIS MA ALTURA DE MENU IZQUIERDO*/
+	height: 810px;/* AJUSTE PARA QUE EL CONTENIDO QUEDE A LA MIS MA ALTURA DE MENU IZQUIERDO*/
 }
 
 #dropdown {                       /* = Div Contenedor del menu izquierdo */
@@ -57,7 +57,7 @@ background-color: #ccea8a;
     width: 0;
     height: 800px;/* AJUSTE PARA QUE ESTE MENU QUEDE A LA MIS MA ALTURA DE CONTENIDO*/
     margin-left: -250px;
-    margin-top: 30px;
+    margin-top: 50px;
     overflow-y: auto;
     background-color: #a6c957;
  
