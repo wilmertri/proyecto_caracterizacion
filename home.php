@@ -117,10 +117,10 @@
               include("vista/veditarfamper.php");
           }
           if ($variable==10) {
-              include("vista/vtbcapacitacion.php");
+              include("vista/educacion/vtbcapacitacion.php");
           }
           if ($variable==11) {
-              include("vista/vtbcapacitacion1.php");
+              include("vista/educacion/vtbcapacitacion1.php");
           }
           if ($variable==12) {
               include("vista/vtbeps.php");

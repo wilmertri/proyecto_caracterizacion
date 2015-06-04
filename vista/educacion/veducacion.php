@@ -17,9 +17,9 @@
                 <select name="ultgra" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['ultgracurper'] ?>"> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($ultgr); $i++){
+						for ($i=0; $i < count($ultgra1); $i++){
 					?>
-					<option value ="<?php echo $ultgr[$i]['codval'] ?>" ><?php echo $ultgr[$i]['nomval'] ?></option>
+					<option value ="<?php echo $ultgra1[$i]['codval'] ?>" ><?php echo $ultgra1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
@@ -30,9 +30,9 @@
                 <select name="titobtper" class="form-control" style="text-transform:uppercase;">
 				<option value= "<?= $datoseducacion[0]['titobtper'] ?>"> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($titobtpe); $i++){
+						for ($i=0; $i < count($titobtper1); $i++){
 					?>
-					<option value ="<?php echo $titobtpe[$i]['idprofesion'] ?>" ><?php echo $titobtpe[$i]['nombreprof'] ?></option>
+					<option value ="<?php echo $titobtper1[$i]['idprofesion'] ?>" ><?php echo $titobtper1[$i]['nombreprof'] ?></option>
 					<?php 
 						} 
 					?>
@@ -45,9 +45,9 @@
                 <select name="matriper" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['matriper'] ?>"> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($matripe); $i++){
+						for ($i=0; $i < count($matriper1); $i++){
 					?>
-					<option value ="<?php echo $matripe[$i]['codval'] ?>" ><?php echo $matripe[$i]['nomval'] ?></option>
+					<option value ="<?php echo $matriper1[$i]['codval'] ?>" ><?php echo $matriper1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
@@ -58,9 +58,9 @@
                 <select name="nomatriper" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['nomatriper'] ?>"> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($nomatripe); $i++){
+						for ($i=0; $i < count($nomatriper1); $i++){
 					?>
-					<option value ="<?php echo $nomatripe[$i]['idtbopcionnomatricula'] ?>" ><?php echo $nomatripe[$i]['opcion'] ?></option>
+					<option value ="<?php echo $nomatriper1[$i]['idtbopcionnomatricula'] ?>" ><?php echo $nomatriper1[$i]['opcion'] ?></option>
 					<?php 
 						} 
 					?>
@@ -74,9 +74,9 @@
                 <select name="termcurant" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['termcurant'] ?>"> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($termcuran); $i++){
+						for ($i=0; $i < count($termcurant1); $i++){
 					?>
-					<option value ="<?php echo $termcuran[$i]['codval'] ?>" ><?php echo $termcuran[$i]['nomval'] ?></option>
+					<option value ="<?php echo $termcurant1[$i]['codval'] ?>" ><?php echo $termcurant1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>

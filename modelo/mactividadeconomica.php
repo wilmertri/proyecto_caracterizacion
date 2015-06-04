@@ -4,7 +4,7 @@
 	 *	@Version: 
 	 */
 	include ("controlador/conexion.php");
-	include("functions.php");
+	include ("functions.php");
 	class Mactividadeconomica extends Funciones_generales {
             
                 

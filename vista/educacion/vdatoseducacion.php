@@ -29,7 +29,7 @@
 	<table class="table center">	
 		<tr>
 			<td><a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a></td>
-			<td><a href="home.php?var=10&id=<?php echo $id;?>" class="btn btn-success">Capacitacion </a></td>
+			<td><a href="home.php?var=10&id=<?= $id ?>" class="btn btn-success">Capacitacion </a></td>
 		</tr>
 	</table>
 </div>

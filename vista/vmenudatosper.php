@@ -12,7 +12,7 @@
 	<div class="dropdown esp">
 		<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown">EDUCACIÓN <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="home.php?var=100&id=<?= $id;?>">MOSTRAR DATOS</a></li>
+			<li><a href="home.php?var=101&id=<?= $id;?>">MOSTRAR DATOS</a></li>
 			<li><a href="home.php?var=100&id=<?= $id;?>">INGRESAR DATOS</a></li>
 		</ul>
 	</div>
