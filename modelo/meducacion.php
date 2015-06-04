@@ -3,11 +3,11 @@
 	include ("functions.php");
 	class meducacion extends Funciones_generales
 	{
-		 function meducacion(){} // CRUD - ESTO ES LA C= CREAR
+		function meducacion(){}
 		
 		function get_valor($codval)
 		{
-			return mostrar_nombre_valores($codval);
+			return $this->mostrar_nombre_valores($codval);
 		}
 		function get_nivel_educativo_alcanzado()
 		   {
@@ -35,7 +35,7 @@
 			
 		function actu_datos_educacion ($ultgra,$titobtper,$matriper,$nomatriper,$termcurant,$idpersona)
 			{
-				$sql= "UPDATE tbdatospersona SET ultgracurper='".$ultgra."' , titobtper='".$titobtper."' , matriper='".$matriper."',nomatriper='".$nomatriper."' , termcurant='".$termcurant."' where idpersona='".$idpersona."' ;";	
+				$sql = "UPDATE tbdatospersona SET ultgracurper='$ultgra', titobtper='$titobtper', matriper='$matriper', nomatriper='$nomatriper', termcurant='$termcurant' WHERE idpersona = '$idpersona'";
 				$this-> cons($sql);
 			}
 		function ver_datos_educacion($idpersona)
