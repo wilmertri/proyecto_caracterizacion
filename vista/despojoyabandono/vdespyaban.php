@@ -366,12 +366,13 @@
 				<label for="Observaciones">Observaciones</label>
 				<input name="observaciones" type="text" class="form-control">
             </div>
-			<div  class="row"><br>
-			<div class="form-group col-lg-6 col-md-6 center">
-				<input type="submit" class="btn btn-primary">
+        </div>    
+		<div  class="row">
+			<div class="form-group col-lg-6 col-md-6">
+				<input type="submit" class="btn btn-success"> <a href="home.php?id=<?= $id; ?>&var=70" class="btn btn-success">Volver</a>
 			</div>	
-			</div>
-		</div>	
+		</div>
 	</form>	
+</div>	
 </div>		
        

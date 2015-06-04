@@ -29,15 +29,6 @@
 			return $this->seleccionar_valores_de_parametro(25);
 		}
 		
-		function get_factores_permanencia()
-		{
-			$sql = "SELECT * FROM tbfactvive;";
-			$conexionBD = new conexion();
-			$conexionBD->conectarBD();
-			$datos = $conexionBD->ejeCon($sql,0);
-			return $datos;
-		}
-		
 		function get_solicitud()
 		{
 			return $this->seleccionar_valores_de_parametro(32);
@@ -73,15 +64,21 @@
 			return $this->seleccionar_valores_de_parametro (37);
 		}
 		
-		function get_razon_retorno ()
+		function get_razon_retorno()
 		{
 			return $this->seleccionar_valores_de_parametro (38);
 		}
 		
 		function actu_datos_despyaban($munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id)
 		{
-			$sql = "UPDATE tbdatospersona SET lugexpulper='$munucipio', fecexpulper='$fechexpul', actperact='$actorarmado', ingresoalimentos='$ingaliment', tiepermun='$tpermanencia', solrupruv='$solicitud', razrupruv='$rinclusion', usopreddes='$usopredio', perbienper='$perbienes', usopreddes='$tipobi', relbienper='$relabien', tipfamper='$tipofam', iderupruv='$ideal', lugarrehubi='$ubicacion', raznoret='$retorno', medprotper='$medproteccion', recprotper='$reciproteccion', indunivict='$indemnizacion', obsdesper='$observacion' WHERE  idpersona = '$id'";                    
+			$sql = "UPDATE tbdatospersona SET lugexpulper='$munucipio', fecexpulper='$fechexpul', actperact='$actorarmado', ingresoalimentos='$ingaliment', tiepermun='$tpermanencia', solrupruv='$solicitud', razrupruv='$rinclusion', usopreddes='$usopredio', perbienper='$perbienes', tipbienper='$tipobi', relbienper='$relabien', tipfamper='$tipofam', iderupruv='$ideal', lugarrehubi='$ubicacion', raznoret='$retorno', medprotper='$medproteccion', recprotper='$reciproteccion', indunivict='$indemnizacion', obsdesper='$observacion' WHERE  idpersona = '$id'";                    
 			$this->cons($sql);
+		}
+
+		public function consulta_datos_despyaban($id)
+		{
+			$sql = "SELECT idpersona, lugexpulper, fecexpulper, tiepermun, actperact, solrupruv, razrupruv, usopreddes, perbienper, tipbienper, relbienper, iderupruv, raznoret, medprotper, recprotper, indunivict, obsdesper, ingresoalimentos, lugarrehubi FROM tbdatospersona WHERE idpersona= '$id';";
+			return $this->SeleccionDatos($sql);
 		}
 	
 		

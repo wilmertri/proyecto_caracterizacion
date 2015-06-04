@@ -259,7 +259,7 @@
           if ($variable==95) 
   		    {
               //Andrea
-  			      include("vista/vdespyaban.php");
+  			      include("vista/despojoyabandono/vdespyaban.php");
           }
           if ($variable==100) 
           {

@@ -2,7 +2,7 @@
 	include ("modelo/mdespyaban.php");
 	$ins = new Mdespyaban();
 	
-	$munucipio 		= isset($_POST["codubiexp"]) ? $_POST["codubiexp"]:NULL;
+	$municipio 		= isset($_POST["codubiexp"]) ? $_POST["codubiexp"]:NULL;
 	$fechexpul 		= isset($_POST["fechadeexpulsion"]) ? $_POST["fechadeexpulsion"]:NULL;
 	$actorarmado 	= isset($_POST["actorarmado"]) ? $_POST["actorarmado"]:NULL;
 	$ingaliment 	= isset($_POST["ingresoalimentos"]) ? $_POST["ingresoalimentos"]:NULL;
@@ -24,8 +24,9 @@
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
-	
-	$factores_permanencia = $ins -> get_factores_permanencia();
+	$dato1 = $ins->consulta_datos_despyaban($id);
+
+	var_dump($dato1);
 	
 	$respuesta_cerrada		= $ins -> get_respuesta_cerrada();
 	$respuesta_cerrada_dos	= $ins -> get_respuesta_cerrada_dos();
@@ -37,7 +38,7 @@
 	$tipo_de_familia		= $ins -> get_tipo_de_familia();
 	$ideal_rupd				= $ins -> get_ideal_rupd();
 	$razon_retorno			= $ins -> get_razon_retorno();
-    echo	$munucipio		;	
+    echo	$municipio		;	
 	echo 	$fechexpul 		;
 	echo 	$actorarmado	;
 	echo	$ingaliment 	;
@@ -101,8 +102,8 @@
 		}
 	}
 	
-	if($munucipio)
-		{
-			$ins->actu_datos_despyaban($munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id);
-		}
+	if($municipio)
+	{
+		$ins->actu_datos_despyaban($municipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id);
+	}
 ?>
