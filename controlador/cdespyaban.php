@@ -38,6 +38,7 @@
 	$tipo_de_familia		= $ins -> get_tipo_de_familia();
 	$ideal_rupd				= $ins -> get_ideal_rupd();
 	$razon_retorno			= $ins -> get_razon_retorno();
+    /*
     echo	$municipio		;	
 	echo 	$fechexpul 		;
 	echo 	$actorarmado	;
@@ -57,47 +58,69 @@
 	echo	$reciproteccion	;
 	echo	$indemnizacion 	;
 	echo 	$observacion 	;
-	
-	if ($actu) {
-		if ($actorarmado ==0) {
+	*/
+	if ($id) {
+		
+		if ($actorarmado == 0) 
+		{
 			$actorarmado = $dato1[0]['actperact'];
 		}
-		if ($ingaliment ==0) {
+
+		if ($ingaliment == 0) 
+		{
 			$ingaliment  = $dato1[0]['ingresoalimentos'];
 		}
-		
-		if ($solicitud ==0) {
+
+		if ($solicitud == 0) 
+		{
 			$solicitud  = $dato1[0]['solrupruv'];
 		}
-		if ($rinclusion ==0) {
+		
+		if ($rinclusion == 0) 
+		{
 			$rinclusion  = $dato1[0]['razrupruv'];
 		}
-		if ($usopredio ==0) {
+
+		if ($usopredio == 0) 
+		{
 			$usopredio = $dato1[0]['usopreddes'];
 		}
-		if ($tipobi ==0) {
-			$tipobi = $dato1[0]['usopreddes'];
+		
+		if ($tipobi == 0) 
+		{
+			$tipobi = $dato1[0]['tipbienper'];
 		}
-		if ($relabien ==0) {
+		
+		if ($relabien == 0) 
+		{
 			$relabien = $dato1[0]['relbienper'];
 		}
-		if ($tipofam ==0) {
+		
+		if ($tipofam == 0) 
+		{
 			$tipofam = $dato1[0]['tipfamper'];
 		}
-		if ($ideal ==0) {
+		
+		if ($ideal == 0) 
+		{
 			$ideal = $dato1[0]['iderupruv'];
 		}
 		
-		if ($retorno ==0) {
+		if ($retorno == 0) 
+		{
 			$retorno = $dato1[0]['raznoret'];
 		}
-		if ($medproteccion ==0) {
+		
+		if ($medproteccion == 0) 
+		{
 			$medproteccion = $dato1[0]['medprotper'];
 		}
-		if ($reciproteccion ==0) {
+		if ($reciproteccion == 0) 
+		{
 			$reciproteccion = $dato1[0]['recprotper'];
 		}
-		if ($indemnizacion=0) {
+		if ($indemnizacion = 0) 
+		{
 			$indemnizacion = $dato1[0]['indunivict'];
 		}
 	}

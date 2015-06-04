@@ -65,7 +65,7 @@
                 <label for="Municipio">Municipio <span style="color:red;">*</span></label>
                 <div id="reloadMunicipioexp">
  					<select name="codubiexp" id="id_estado" class="form-control" style="text-transform:uppercase;">
-						<option value="0">Seleccione municipio</option>
+						<option value="">Seleccione municipio</option>
  					</select>
  				</div>
             </div>
@@ -80,7 +80,7 @@
 			<div class="form-group col-lg-6 col-md-6">
 				<label for="Actor armado">Después del hecho victimizante, ¿Algún actor armado le ha impedido salir de un territorio?</label>
 				<select name="actorarmado" onchange="javascript:mostrar(this.value);" class="form-control">
-						<option value=0> Seleccione una opción </option>>
+						<option value=""> Seleccione una opción </option>>
 						
 						<?php 
 						//Select
