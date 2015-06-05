@@ -28,9 +28,9 @@
 		/*
 		 *	Función para obtener el titulo obtenido de la tabla tbprofesion
 	     */
-		function get_titulo_obtenido($idprofesion)
+		function get_titulo_obtenido()
 		{
-			$sql = "SELECT * FROM tbprofesion where idprofesion = '$idprofesion'";
+			$sql = "SELECT * FROM tbprofesion";
 			return $this->SeleccionDatos($sql);
 		}
 		
@@ -76,6 +76,15 @@
 			$sql = "SELECT ultgracurper, titobtper, matriper, nomatriper, termcurant FROM tbdatospersona WHERE idpersona = $idpersona";			
             return $this->SeleccionDatos($sql);
 		}		   
-		
+		function titulo_obtenido($id)        
+		{
+            $sql = "SELECT `idprofesion`,`nombreprof` FROM `tbprofesion` WHERE `idprofesion`= '".$id."';";
+            return $this->SeleccionDatos($sql);
+        }
+		function asistencia_estudios($idnomatricula)        
+		{
+            $sql = "SELECT `idtbopcionnomatricula`,`opcion` FROM `tbopcionnomatricula` WHERE `idtbopcionnomatricula`= '".$idnomatricula."';";
+            return $this->SeleccionDatos($sql);
+        }
 	}		
 ?>		

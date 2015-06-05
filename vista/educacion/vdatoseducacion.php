@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<th>¿terminó el año escolar anterior?:</th>
-			<td><?= $terminoAño ?></td>
+			<td><?= $termino ?></td>
 		</tr>
 		
 	</table>

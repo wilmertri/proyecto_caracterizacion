@@ -16,11 +16,6 @@
 			$sql = "DELETE FROM tbexplaboral WHERE codexplab = '".$codexp."';";
 			$this -> cons($sql);
 		}
-		/*function cons ($c) {
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$conexionBD -> ejeCon($c, 1);
-		}*/
 		function selexpper() {
 			$sql = "SELECT * FROM tbexplaboral;";
 			return $this->SeleccionDatos($sql);

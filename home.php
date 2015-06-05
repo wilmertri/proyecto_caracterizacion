@@ -1,4 +1,4 @@
-<?php   //include("modelo/mseguridad.php"); ?>
+<?php   include("modelo/mseguridad.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,6 +277,14 @@
 				if ($variable==105) 
           {
 				include("vista/educacion/vprofesion1.php");
+          }
+				if ($variable==106) 
+          {
+				include("vista/educacion/vtbopcionnomatricula.php");
+          }
+				if ($variable==107) 
+          {
+				include("vista/educacion/vtbopcionnomatricula1.php");
           }
       ?>  
     </div>                                                

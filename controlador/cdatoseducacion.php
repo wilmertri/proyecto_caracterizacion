@@ -17,7 +17,7 @@
 	}
 	if ($datoseducacion[0]['titobtper']) 
 	{
-		$verTitulo			= $ins->get_titulo_obtenido($datoseducacion[0]['titobtper']);
+		$verTitulo			= $ins->titulo_obtenido($datoseducacion[0]['titobtper']);
 		$titulo				= $verTitulo[0]['nombreprof'];	
 	}
 	else
@@ -36,7 +36,7 @@
 
 	if ($datoseducacion[0]['nomatriper']) 
 	{
-		$verNomatri			= $ins->get_asistencia_estudios($datoseducacion[0]['nomatriper']);
+		$verNomatri			= $ins->asistencia_estudios($datoseducacion[0]['nomatriper']);
 		$noMatri			= $verNomatri[0]['opcion'];	
 	}
 	else
@@ -45,11 +45,11 @@
 	}
 	if ($datoseducacion[0]['termcurant']) 
 	{
-		$verTerminoaño		= $ins->get_valor($datoseducacion[0]['termcurant']);
-		$terminoAño			= $verTerminoaño[0]['nomval'];	
+		$verTermino		= $ins->get_valor($datoseducacion[0]['termcurant']);
+		$termino			= $verTermino[0]['nomval'];	
 	}
 	else
 	{
-		$terminoAño 		= "Sin registro";
+		$termino 		= "Sin registro";
 	}
 ?>
