@@ -21,16 +21,16 @@
 		 *	Función para obtener el nivel educativo
 	     */
 		function get_nivel_educativo_alcanzado()
-		   {
+		{
 			return $this->seleccionar_valores_de_parametro(4);
-		   }
+		}
 		
 		/*
 		 *	Función para obtener el titulo obtenido de la tabla tbprofesion
 	     */
-		function get_titulo_obtenido()
+		function get_titulo_obtenido($idprofesion)
 		{
-			$sql = "SELECT * FROM tbprofesion";
+			$sql = "SELECT * FROM tbprofesion where idprofesion = '$idprofesion'";
 			return $this->SeleccionDatos($sql);
 		}
 		
