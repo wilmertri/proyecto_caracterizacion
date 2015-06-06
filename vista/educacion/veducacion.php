@@ -49,7 +49,7 @@
 					?>
 					<option value ="<?php echo $titobtper1[$i]['idprofesion'] ?>" ><?php echo $titobtper1[$i]['nombreprof'] ?></option>
 					<?php 
-						} 
+						}
 					?>
 				</select>
             </div>

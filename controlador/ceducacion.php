@@ -17,6 +17,13 @@
 		
 		$datoseducacion = $ins->ver_datos_educacion($id);
 		
+		
+		if($matriper==102){
+			
+			$nomatriper=14;
+			
+		}
+		
 		if($ultgra)
 			{
 				$ins->actu_datos_educacion($ultgra, $titobtper, $matriper, $nomatriper, $termcurant, $id);  // actualizar datos

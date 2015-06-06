@@ -4,22 +4,27 @@
 <h1>Ingresar Capacitacion </h1>
 <div class="forms">
     <form name="form1" action="" method="post">
+		<div class="row">
+            <div class="form-group col-md-12">
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
+            </div>
+		</div>
         <div class="row">
             <div class="form-group">
-                <label for="Nombre de la Capacitación ">Nombre de la Capacitación </label>
-                <input name="nomcap" type="text" class="form-control">
+                <label for="Nombre de la Capacitación ">Nombre de la Capacitación <span style="color:red;">*</span></label>
+                <input name="nomcap" type="text" class="form-control" placeholder="ej: gestion financiera"  pattern="(?=.*[A-z ]).{2,50}" title= "Maximo 50 caracteres" required>
             </div>
 			<div class="form-group">
-                <label for="Entidad donde recibio la Capacitación ">Entidad donde recibió la Capacitación </label>
-                <input name="entcap" type="text" class="form-control">
+                <label for="Entidad donde recibio la Capacitación ">Entidad donde recibió la Capacitación <span style="color:red;">*</span></label>
+                <input name="entcap" type="text" class="form-control" placeholder="ej: ENID"  pattern="(?=.*[A-z ]).{2,50}" title= "Maximo 50 caracteres" required>
             </div>
 			<div class="form-group">
-                <label for="Titulo obtenido de la Capacitación ">Título Obtenido</label>
-                <input name="titcapper" type="text" class="form-control">
+                <label for="Titulo obtenido de la Capacitación ">Título Obtenido <span style="color:red;">*</span></label>
+                <input name="titcapper" type="text" class="form-control" placeholder="ej: tecnico laboral en sistemas"  pattern="(?=.*[A-z ]).{2,50}" title= "Maximo 50 caracteres" required>
             </div>
 			<div class="form-group">
-                <label for="Le gustaria capacitarse ">Le gustaria capacitarse? (En que le gustaria capacitarse)</label>
-                <input name="opicapper" type="text"  class="form-control">
+                <label for="Le gustaria capacitarse ">Le gustaria capacitarse? (En que le gustaria capacitarse) <span style="color:red;">*</span></label>
+                <input name="opicapper" type="text"  class="form-control" placeholder="Escriba 'No' en caso de no tener interes"  pattern="(?=.*[A-z ]).{2,50}" title= "Maximo 50 caracteres" required>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Enviar">
