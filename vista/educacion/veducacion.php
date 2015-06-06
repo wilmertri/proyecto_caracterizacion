@@ -2,7 +2,22 @@
 	include ("controlador/ceducacion.php");
 	include("vista/conexion_sqlserver.php");
 ?>
+<script language="javascript" src="js/jquery-1.9.1.js"></script><!-- llamamos al JQuery-->
+<script language="javascript">
 
+	function mostrar(val)
+	{
+		if (document.getElementById){ //se obtiene el id
+			var el = document.getElementById('mosnomatri'); //se define la variable "el" igual a nuestro div
+			el.style.display = 'none';
+			if (val=='103'){
+				el.style.display = 'block';
+			}else{
+				el.style.display = 'none';
+			}
+		}
+	}
+</script>
 <h1>Ingresar Datos academicos</h1>
 <div class="forms1">
     <form name="form1" action="" method="post">
@@ -42,7 +57,7 @@
 		<div class="row">
             <div class="form-group col-md-6">
                 <label for="Matriculado">¿Actualmente está matriculado(a)? <span style="color:red;">*</span></label>
-                <select name="matriper" class="form-control" style="text-transform:uppercase;">
+                <select name="matriper" onchange="javascript:mostrar(this.value);" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['matriper'] ?>"> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($matriper1); $i++){
@@ -53,7 +68,7 @@
 					?>
 				</select>
             </div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-6" id="mosnomatri">
                 <label for="Razon no estudio">Actualmente, ¿cuál es la razón principal por la que no asiste a la escuela, colegio o universidad? <span style="color:red;">*</span></label>
                 <select name="nomatriper" class="form-control" style="text-transform:uppercase;">
 					<option value = "<?= $datoseducacion[0]['nomatriper'] ?>"> Seleccione una opción </option>

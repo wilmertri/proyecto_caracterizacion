@@ -7,7 +7,6 @@
 		$entcap		= isset($_POST["entcap"]) ? $_POST["entcap"]:null;
 		$titcapper	= isset($_POST["titcapper"]) ? $_POST["titcapper"]:null;
 		$opicapper	= isset($_POST["opicapper"]) ? $_POST["opicapper"]:null;
-		$newopicapper= isset($_POST["newopicapper"]) ? $_POST["newopicapper"]:null;
 		$idpersona	= isset($_POST["idpersona"]) ? $_POST["idpersona"]:NULL;
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null;
 		$id= isset($_GET["id"]) ? $_GET["id"]:null;
@@ -16,12 +15,12 @@
 		$dato1		= $ins->selcap1($id);
 		$dato2 		= $ins -> selcap2($cod);
 
-		if($codcapper && $nomcap && $entcap && $titcapper && $opicapper && $newopicapper &&$actu) 
+		if($codcapper &&$actu) 
 			{
-				$ins->updcap($codcapper,$nomcap,$entcap,$titcapper,$opicapper,$newopicapper);  // actualizar datos
+				$ins->updcap($codcapper,$nomcap,$entcap,$titcapper,$opicapper);  // actualizar datos
 			}	
-		if($nomcap && $entcap && $titcapper && $opicapper && $newopicapper  && $id &&  !$actu) // insertar datos  
+		if($nomcap && $entcap && $titcapper && $opicapper && $id &&  !$actu) // insertar datos  
 			{
-				$ins->inscap($nomcap,$entcap,$titcapper,$opicapper,$newopicapper,$id); 
+				$ins->inscap($nomcap,$entcap,$titcapper,$opicapper,$id); 
 			}
 ?>			

@@ -15,21 +15,16 @@
             </div>
 			<div class="form-group">
                 <label for="Titulo obtenido de la Capacitación ">Título Obtenido</label>
-                <input name="titcap" type="text" class="form-control">
+                <input name="titcapper" type="text" class="form-control">
             </div>
 			<div class="form-group">
-                <label for="Le gustaria capacitarse ">Le gustaria capacitarse</label>
-                <input name="opicaper" type="text" value = "<?php echo $dato2[0]['opicaper'] ?>" class="form-control">
-            </div>
-			
-			<div class="form-group">
-                <label for="En que le gustaria capacitarse">En que le gustaria capacitarse </label>
-                <input name="newopicaper" type="text" value = "<?php echo $dato2[0]['newopicaper'] ?>" class="form-control">
+                <label for="Le gustaria capacitarse ">Le gustaria capacitarse? (En que le gustaria capacitarse)</label>
+                <input name="opicapper" type="text"  class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
-				<a href="home.php?var=56&id=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php?var=101&id=<?= $id ?>" class="btn btn-success">Volver</a>
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -43,7 +38,6 @@
             <th>Entidad donde recibió la Capacitación </th>
             <th>Título Obtenido</th>
 			<th>Le gustaria capacitarse</th>
-			<th>En que le gustaria capacitarse</th>
 			<th>Editar</th>
         </tr>	
 	<?php
@@ -55,10 +49,9 @@
 			<td><?php echo $dato[$i]['codcapper']?></td>
 			<td><?php echo $dato[$i]['nomcap']?></td>
 		    <td><?php echo $dato[$i]['entcap']?></td>
-            <td><?php echo $dato[$i]['titcap'] ?></td>
-			<td><?php echo $dato[$i]['opicaper'] ?></td>
-			<td><?php echo $dato[$i]['newopicaper'] ?></td>
-            <td><a href="home.php?var=11&id=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-primary">Editar</a></td>
+            <td><?php echo $dato[$i]['titcapper'] ?></td>
+			<td><?php echo $dato[$i]['opicapper'] ?></td>
+            <td><a href="home.php?var=11&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-success">Editar</a></td>
             
 		</tr>
 	<?php } ?>		

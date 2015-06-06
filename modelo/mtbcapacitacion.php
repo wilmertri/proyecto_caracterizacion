@@ -4,15 +4,15 @@
 	class Mcapacitacion extends Funciones_generales{
 		 
 		 function Mcapacitacion(){}
-			function inscap($nomcap, $entcap, $titcapper, $opicapper, $newopicapper, $idpersona) 
+			function inscap($nomcap, $entcap, $titcapper, $opicapper, $idpersona) 
 			{	
-				$sql =  "INSERT INTO tbcapacitacion (idpersona,nomcap,entcap,titcapper,opicapper,newopicapper) values ('".$idpersona."','".$nomcap."' , '".$entcap."' , '".$titcapper."','".$opicapper."' , '".$newopicapper."');";
+				$sql =  "INSERT INTO tbcapacitacion (idpersona,nomcap,entcap,titcapper,opicapper) values ('".$idpersona."','".$nomcap."' , '".$entcap."' , '".$titcapper."','".$opicapper."');";
 				$this -> cons($sql);
 			}
 			
-		function updcap ($codcapper,$nomcap,$entcap,$titcapper, $opicapper, $newopicapper)
+		function updcap ($codcapper,$nomcap,$entcap,$titcapper, $opicapper)
 			{
-				$sql= "UPDATE tbcapacitacion SET nomcap='".$nomcap."' , entcap='".$entcap."' , titcapper='".$titcapper."', opicapper='".$opicapper."' , newopicapper='".$newopicapper."' where codcapper='".$codcapper."' ;";	
+				$sql= "UPDATE tbcapacitacion SET nomcap='".$nomcap."' , entcap='".$entcap."' , titcapper='".$titcapper."', opicapper='".$opicapper."' where codcapper='".$codcapper."' ;";	
 				$this-> cons($sql);
 			}
 		function delcap($codcapper) // CRUD - ESTO ES LA D= eliminar
