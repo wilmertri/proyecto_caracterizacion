@@ -122,6 +122,16 @@
 		$etnia	= "Sin registro";
 	}
 
+	if ($dato1[0]['parperfam']) 
+	{
+		$verParentesco   = $ins->get_valor($dato1[0]['parperfam']);
+		$parentesco		 = $verParentesco[0]['nomval'];
+	}
+	else
+	{
+		$parentesco	= "Sin registro";
+	}
+
 
 
 

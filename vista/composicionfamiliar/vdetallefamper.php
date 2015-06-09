@@ -49,15 +49,12 @@
 			<td><?= $ocupacionActual; ?></td>
 		</tr>
 		<tr>
-			<td> Etnia: </td>
+			<td> Grupo poblacional: </td>
 			<td> <?= $etnia; ?></td>	
 		</tr>
 		<tr>
 			<td> Parentesco:</td>
-			<?php
-					$parent = $datosfamper->valor2($dato1[0]["parperfam"]);
-				?>
-			<td> <?= $parent[0]['nomval'] ?></td>	
+			<td> <?= $parentesco; ?></td>	
 		</tr>
 		<tr>
 			<td align = "center">

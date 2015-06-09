@@ -111,7 +111,7 @@
                 <input name="ocupacion" type="text" class="form-control">
             </div>
 			<div class="form-group col-md-6">
-			<label for="Etnia">Etnia</label>
+			<label for="Etnia">Grupo poblacional</label>
 				<select name="etnia"class="form-control">
 				<option value=0> Seleccione una opcion </option>>
 					<?php 
@@ -141,54 +141,40 @@
 					<?php } ?>
 				</select>
 			</div>
+			<div class="form-group col-lg-6">
+				<label for="">Sistema de Salud</label>
+                <select name="sissal" class="form-control" id="">
+                	<option value="">Seleccione Sistema de Salud</option>
+					<?php 
+						for ($i=0; $i < count($sissal); $i++)
+						{
+					?>
+					<option value ="<?php echo $sissal[$i]['codval'] ?>" ><?php echo $sissal[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+				<label for="">¿Actualmente estudia?</label>
+                <select name="estactual" class="form-control" id="">
+                	<option value="">Seleccione Sistema de Salud</option>
+					<?php 
+						for ($i=0; $i < count($estactual); $i++)
+						{
+					?>
+					<option value ="<?php echo $estactual[$i]['codval'] ?>" ><?php echo $estactual[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
 		</div>
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Guardar">
+                <input type="submit" class="btn btn-success" value="Guardar"> <a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a>
             </div>
         </div>
     </form>
-
-			<h1>Listado</h1><br>
-			<table class="table" cellspacing="0" width="100%">
-				<thead>
-					<tr>
-						<th>Documento</th>
-						<th>Primer nombre</th>
-						<th>Primer apellido</th>
-						<th>Genero</th>
-						<th>Parentesco</th>
-						<th>Ver Informacion</th>
-					</tr>
-				</thead>
-				
-				<tfoot>
-					<tr>
-						<th>Documento</th>
-						<th>Primer nombre</th>
-						<th>Primer apellido</th>
-						<th>Genero</th>
-						<th>Parentesco</th>
-						<th>Ver Informacion</th>
-					</tr>
-				</tfoot>
-				
-				<tbody>		
-					<?php
-						$dat = $ins->selper2($id);
-						for($i=0;$i<count($dat);$i++) {
-							$gene = $ins->valor2($dat[$i]["genfam"]);
-							$pare = $ins->valor2($dat[$i]["parperfam"]);
-					?>
-		
-					<tr>
-						<td align = "left"><?php echo $dat[$i]["numdocfam"]; ?></td>
-						<td align = "left"><?php echo $dat[$i]["pnomfam"]; ?></td>
-						<td align = "left"><?php echo $dat[$i]["papefam"]; ?></td>
-						<td align = "left"><?php echo $gene[0]["nomval"]; ?></td>
-						<td align = "left"><?php echo $pare[0]["nomval"]; ?></td>
-						<td align = "center"><a href ="home.php?var=8&id=<?php echo $dat[$i]["numdocfam"]; ?>" class="btn btn-success">Detalle</a></td>
-					</tr>
-					<?php } ?>
-				</tbody>
-		</table>
 </div>

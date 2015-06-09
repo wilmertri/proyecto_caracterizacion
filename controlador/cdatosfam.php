@@ -17,6 +17,7 @@
 	$discapasidad 	= isset($_POST["discapasidad"]) ? $_POST["discapasidad"]:NULL;
 	$parentesco 	= isset($_POST["parentesco"]) ? $_POST["parentesco"]:NULL;
 	$numdochogar 	= isset($_POST["numdochogar"]) ? $_POST["numdochogar"]:NULL;
+	$estactual		= isset($_POST["estactual"]) ? $_POST["estactual"]:NULL;
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
@@ -28,6 +29,8 @@
 	$parent = $ins	->valor	(15);
 	$etnia 	= $ins	->valor	(10);
 	$discp 	= $ins	->valor	(12);
+	$estactual = $ins ->valor(24);
+	$sissal = $ins->get_sistema_salud();
 	
 	if ($actu) {
 		if ($genero==0) {

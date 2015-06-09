@@ -42,9 +42,9 @@
 			return $this->SeleccionDatos($sql);
 		}
 
-		function valor2($val) {
-			$sql = "SELECT codval,nomval FROM tbvalor WHERE codval = '".$val."';";
-			return $this->SeleccionDatos($sql);
+		function get_sistema_salud()
+		{
+			return $this->seleccionar_valores_de_parametro(23);
 		}
 
 	}
