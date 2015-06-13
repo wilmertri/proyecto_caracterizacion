@@ -72,14 +72,16 @@
 			<?php
 				$dato = $ins -> selneg1($id);
 				for($i=0;$i<count($dato);$i++) {
+					$durneg2 = $ins->get_valor($dato[$i]["durneg"]);
+					$negactper2 = $ins->get_valor($dato[$i]["negactper"]);
 			?>
 			<tr>
 				<td><?php echo $dato[$i]["codnegper"]; ?></td>
 				<td><?php echo $dato[$i]["labneg"]; ?></td>
 				<td><?php echo $dato[$i]["tipneg"]; ?></td>
-				<td><?php echo $dato[$i]["durneg"]; ?></td>
+				<td><?php echo $durneg2[0]["nomval"]; ?></td>
 				<td><?php echo $dato[$i]["dirneg"]; ?></td>
-				<td><?php echo $dato[$i]["negactper"]; ?></td>
+				<td><?php echo $negactper2[0]["nomval"]; ?></td>
 				<td><a href="home.php?var=19&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codnegper"]; ?>" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php } ?>

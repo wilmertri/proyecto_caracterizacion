@@ -17,7 +17,7 @@
 				<input class="form-control" type="text" name="tipneg"  placeholder="ej: De servicios, de manufactura, etc" maxlength="50" required>
 			</div>
 			<div class="form-group">
-				<label for="durneg">Duracion  <span style="color:red;">*</span></label>
+				<label for="Duracion">Duracion  <span style="color:red;">*</span></label>
 				<select name="durneg" class="form-control">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -30,12 +30,12 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="dirneg">Dirección  <span style="color:red;">*</span></label>
+				<label for="direccion">Dirección  <span style="color:red;">*</span></label>
 				<input class="form-control" type="text" name="dirneg" maxlength="30" required>
 			</div>
 			<div class="form-group">
 				<label for="negactper">Esta activo el negocio?  <span style="color:red;">*</span></label>
-				<select name="durneg" class="form-control">
+				<select name="negactper" class="form-control">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($negactper1); $i++){
@@ -71,14 +71,17 @@
 			<?php
 				$dato = $ins -> selneg1($id);
 				for($i=0;$i<count($dato);$i++) {
+					$durneg2 = $ins->get_valor($dato[$i]["durneg"]);
+					$negactper2 = $ins->get_valor($dato[$i]["negactper"]);
+					//var_dump($durneg2);
 			?>
 			<tr>
 				<td><?php echo $dato[$i]["codnegper"]; ?></td>
 				<td><?php echo $dato[$i]["labneg"]; ?></td>
 				<td><?php echo $dato[$i]["tipneg"]; ?></td>
-				<td><?php echo $dato[$i]["durneg"]; ?></td>
+				<td><?php echo $durneg2[0]["nomval"]; ?></td>
 				<td><?php echo $dato[$i]["dirneg"]; ?></td>
-				<td><?php echo $dato[$i]["negactper"]; ?></td>
+				<td><?php echo $negactper2[0]["nomval"]; ?></td>
 				<td><a href="home.php?var=19&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codnegper"]; ?>" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php } ?>
