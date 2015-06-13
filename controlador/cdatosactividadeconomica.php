@@ -34,7 +34,7 @@
 
 	if ($datosactividad[0]['ingmenper']) 
 	{
-		$IngresoMensual	= $datosactividad[0]['ingmenper'];
+		$IngresoMensual	= "$ ".$datosactividad[0]['ingmenper'];
 	}
 	else
 	{

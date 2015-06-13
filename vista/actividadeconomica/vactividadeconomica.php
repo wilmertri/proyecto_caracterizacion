@@ -7,7 +7,7 @@
         <div class="row">
             <div class="form-group col-lg-6">
                 <label for="Cuantas personas tiene a su cargo ">Cuantas personas tiene a su cargo</label>	
-                <input name="numpercar" type="number" class="form-control" pattern="[0-9]{1,3}" min="0" max="30" value="<?= $datosactividad[0]['numpercar'] ?>"> <!--esta variable viene de la tabla vdatospersona-->
+                <input name="numpercar" type="number" class="form-control" placeholder="ej: 2" pattern="[0-9]{1,3}" min="0" max="30" value="<?= $datosactividad[0]['numpercar'] ?>"> <!--esta variable viene de la tabla vdatospersona-->
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Ocupación Actual">Ocupación Actual <span style="color:red;">*</span> </label>
@@ -28,7 +28,7 @@
 		<div class="row">	
 			<div class="form-group col-lg-6">
                 <label for="En que trabaja">En que trabaja</label>
-                <input name="trabper" type="text" class="form-control" pattern="[A-z ]{2,20}" >
+                <input name="trabper" type="text" class="form-control" placeholder="ej: Como consultor de seguros"pattern="[A-z ]{2,50}" >
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Ingresos Mensuales">Ingresos Mensuales</label>

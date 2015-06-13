@@ -6,17 +6,20 @@
 	<form name="form1" method="POST" action="">
 		<div class="row">
 			<div class="form-group">
-                <label for="Labor de la experiencia">Labor que desempeño</label>
-                <input name="labexp" type="text" class="form-control">
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
             </div>
 			<div class="form-group">
-                <label for="Descripcion de la experiencia">Descripcion de la labor</label>
-                <input name="desexp" type="text" class="form-control">
+                <label for="Labor de la experiencia">Labor que desempeño <span style="color:red;">*</span></label>
+                <input name="labexp" type="text" class="form-control" maxlength="50" required>
+            </div>
+			<div class="form-group">
+                <label for="Descripcion de la experiencia">Descripcion de la labor <span style="color:red;">*</span></label>
+                <input name="desexp" type="text" class="form-control" maxlength="50" required>
             </div>	
 			
 			<div class="form-group">
-                <label for="Ingreso de la experiencia">Ingreso de la labor</label>
-                <input name="ingexp" type="text" class="form-control">
+                <label for="Ingreso de la experiencia">Ingreso de la labor <span style="color:red;">*</span></label>
+                <input name="ingexp" type="text" class="form-control" placeholder="ej: 680000" pattern="[0-9]{1,10}" required>
             </div>
 			
 			<div class="form-group">
