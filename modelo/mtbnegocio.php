@@ -27,7 +27,7 @@
 			return $this->seleccionar_valores_de_parametro(24);
 		}
 		
-		function insneg($labneg, $tipneg, $durneg, $dirneg, $negactper, $idpersona) {
+		function insneg($idpersona, $labneg, $tipneg, $durneg, $dirneg, $negactper) {
 			$sql = "INSERT INTO tbnegocio (idpersona, labneg, tipneg, durneg, dirneg, negactper) VALUES ('".$idpersona."','".$labneg."','".$tipneg."','".$durneg."','".$dirneg."','".$negactper."');";
 			$this -> cons($sql);
 		}

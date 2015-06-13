@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2015 a las 04:47:47
--- Versión del servidor: 5.6.16
--- Versión de PHP: 5.5.11
+-- Tiempo de generación: 14-06-2015 a las 00:27:07
+-- Versión del servidor: 5.6.24
+-- Versión de PHP: 5.5.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,15 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `tbcapacitacion` (
-  `codcapper` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo capacitacion',
+  `codcapper` int(11) NOT NULL COMMENT 'codigo capacitacion',
   `nomcap` varchar(50) NOT NULL COMMENT 'nombre de la capacitacion',
   `entcap` varchar(50) NOT NULL COMMENT 'entidad donde recibio la capacitacionentidad donde recibio la capacitacion',
   `titcapper` varchar(50) NOT NULL COMMENT 'Titulo de la capacitacion',
   `opicapper` varchar(50) DEFAULT NULL COMMENT 'entidad donde recibio la capacitacion titulo obtenido de la capacitacion',
-  `idpersona` int(11) NOT NULL,
-  PRIMARY KEY (`codcapper`),
-  KEY `idpersona` (`idpersona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `idpersona` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbcapacitacion`
@@ -54,12 +52,10 @@ INSERT INTO `tbcapacitacion` (`codcapper`, `nomcap`, `entcap`, `titcapper`, `opi
 --
 
 CREATE TABLE IF NOT EXISTS `tbclasediscapacidad` (
-  `idclase` int(11) NOT NULL AUTO_INCREMENT,
+  `idclase` int(11) NOT NULL,
   `nomclasedis` varchar(60) NOT NULL,
-  `idtipodis` int(11) NOT NULL,
-  PRIMARY KEY (`idclase`),
-  KEY `idtipodis` (`idtipodis`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idtipodis` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -68,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tbclasediscapacidad` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbdatosfamiliaper` (
-  `idfamiliaper` int(11) NOT NULL AUTO_INCREMENT,
+  `idfamiliaper` int(11) NOT NULL,
   `numdocfam` varchar(10) NOT NULL COMMENT 'numero de documento',
   `pnomfam` varchar(20) NOT NULL COMMENT 'primer nombre',
   `snomfam` varchar(50) DEFAULT NULL COMMENT 'segundo nombre',
@@ -85,18 +81,8 @@ CREATE TABLE IF NOT EXISTS `tbdatosfamiliaper` (
   `numdocper` varchar(10) NOT NULL COMMENT 'numero de documento de cabeza de hogar',
   `estact` int(11) DEFAULT NULL COMMENT 'estudia actualmente',
   `regsegsocfam` int(11) DEFAULT NULL,
-  `incrupruvfam` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idfamiliaper`),
-  KEY `numdocper` (`numdocper`),
-  KEY `genfam` (`genfam`),
-  KEY `nivescfam` (`nivescfam`),
-  KEY `genfam_2` (`genfam`),
-  KEY `genfam_3` (`genfam`),
-  KEY `nivescfam_2` (`nivescfam`),
-  KEY `numdocper_2` (`numdocper`),
-  KEY `parperfam` (`parperfam`),
-  KEY `etniaper` (`etniaper`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `incrupruvfam` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -105,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `tbdatosfamiliaper` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbdatospersona` (
-  `idpersona` int(11) NOT NULL AUTO_INCREMENT,
+  `idpersona` int(11) NOT NULL,
   `numdocper` varchar(10) NOT NULL COMMENT 'numero de documento',
   `tipdocper` int(11) NOT NULL COMMENT 'tipo de documento',
   `lugexpdocper` int(11) NOT NULL COMMENT 'lugar de expedicion de documento',
@@ -192,32 +178,8 @@ CREATE TABLE IF NOT EXISTS `tbdatospersona` (
   `lugarrehubi` int(11) DEFAULT NULL COMMENT 'Lugar de rehubicación',
   `fecha_create_fic` datetime DEFAULT NULL,
   `usuario` varchar(10) DEFAULT NULL,
-  `trabajoper` varchar(50) NOT NULL,
-  PRIMARY KEY (`idpersona`),
-  KEY `tipdocper` (`tipdocper`),
-  KEY `tipdocper_2` (`tipdocper`),
-  KEY `tipdocper_3` (`tipdocper`),
-  KEY `lugexpdocper` (`lugexpdocper`),
-  KEY `genper` (`genper`),
-  KEY `genper_2` (`genper`),
-  KEY `zonper` (`zonper`),
-  KEY `verper` (`verper`),
-  KEY `secper` (`secper`),
-  KEY `lugnacper` (`lugnacper`),
-  KEY `lugexpulper` (`lugexpulper`),
-  KEY `estcivper` (`estcivper`),
-  KEY `nivescper` (`nivescper`),
-  KEY `tipvivper` (`tipvivper`),
-  KEY `convivper` (`convivper`),
-  KEY `regsegsocper` (`regsegsocper`),
-  KEY `epsper` (`epsper`),
-  KEY `tipfamper` (`tipfamper`),
-  KEY `etniaper` (`etniaper`),
-  KEY `geslanper` (`geslanper`),
-  KEY `fk_tbdatospersona_tbprofesion1_idx` (`proper`),
-  KEY `fk_tbdatospersona_tbopcionnomatricula1_idx` (`nomatriper`),
-  KEY `usuario` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `trabajoper` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbdatospersona`
@@ -225,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `tbdatospersona` (
 
 INSERT INTO `tbdatospersona` (`idpersona`, `numdocper`, `tipdocper`, `lugexpdocper`, `pnomper`, `snomper`, `papeper`, `sapeper`, `genper`, `dirper`, `zonper`, `verper`, `secper`, `barfinper`, `telper`, `telsegper`, `lugnacper`, `fecnacper`, `lugexpulper`, `fecexpulper`, `tiepermun`, `estcivper`, `nivescper`, `ultgracurper`, `numpercar`, `ingmenper`, `tipvivper`, `convivper`, `estper`, `segsocper`, `regsegsocper`, `epsper`, `traper`, `ubitraper`, `tipfamper`, `etniaper`, `geslanper`, `hijosdepper`, `relsexper`, `libmilper`, `exclibmil`, `titobtper`, `matper`, `motnoestper`, `terestper`, `negserper`, `atesalposvicper`, `esqvacper`, `conodoper`, `comdiaper`, `disconfarm`, `rehper`, `proper`, `matriper`, `nomatriper`, `termcurant`, `hijosacargo`, `libretmil`, `tramlibretmil`, `tipparviv`, `tippisviv`, `tiptecviv`, `zonrieviv`, `numhabviv`, `numperhabviv`, `numhabhab`, `tiprelviv`, `ocuperact`, `actperact`, `solrupruv`, `razrupruv`, `usopreddes`, `perbienper`, `tipbienper`, `relbienper`, `iderupruv`, `raznoret`, `medprotper`, `recprotper`, `indunivict`, `obsdesper`, `numficha`, `afiliacionsalud`, `ingresoalimentos`, `lugarrehubi`, `fecha_create_fic`, `usuario`, `trabajoper`) VALUES
 (3, '1072638293', 1, 0, 'ANDRES', 'FELIPE', 'VARGAS', 'TORRES', 3, 'CRA 4 # 12 - 87', 1, 1, 'RIO FRIO', '', '8706959', '', 0, '1991-07-19', NULL, NULL, NULL, 5, NULL, 10, 7, '750000.00', NULL, 0, 0, 0, 0, NULL, 0, '', 0, 22, 0, NULL, NULL, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 104, 1, 104, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 131, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, 'aaaa'),
-(4, '20506030', 1, 25175, 'AN', 'FE', 'VT', '', 3, 'CRA 4 # 12 - 87', 1, 1, '', '', '8706959', '', 25175, '1991-07-19', NULL, NULL, NULL, 5, NULL, 9, 0, '0.00', 14, 0, 95, 0, 0, NULL, 0, '', 0, 25, 0, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 102, 2, 106, NULL, NULL, NULL, 61, 55, 70, 77, 3, 2, 2, 87, 133, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, 'Nada'),
+(4, '20506030', 1, 25175, 'AN', 'FE', 'VT', '', 3, 'CRA 4 # 12 - 87', 1, 1, '', '', '8706959', '', 25175, '1991-07-19', NULL, NULL, NULL, 5, NULL, 9, 0, '0.00', 14, 0, 95, 0, 0, NULL, 0, '', 0, 25, 0, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 102, 2, 106, 0, 0, 0, 61, 55, 70, 77, 3, 2, 2, 87, 133, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, 'Nada'),
 (5, '34576678', 1, 11001, 'GI', '', 'TU', '', 3, 'CRA 4 # 12 - 87', 1, 1, 'RIO FRIO', '', '8706959', '', 11001, '1991-07-10', NULL, NULL, NULL, 5, NULL, 11, NULL, NULL, 0, 0, 0, 0, 0, NULL, 0, '', 0, 25, 0, NULL, NULL, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 104, 1, 105, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, ''),
 (6, '85987456', 2, 20383, 'CARLOS', 'ANDRES', 'RESTREPO', 'ROJAS', 3, 'CRA 6', 1, 1, 'CHILACOS', 'LOS ZIPAS', '8626698', '3007587459', 20621, '1991-01-01', NULL, NULL, NULL, 8, NULL, 12, NULL, NULL, NULL, 0, 0, 0, 0, NULL, 0, '', 0, 22, 0, NULL, 63, NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 106, 2, 106, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 222, NULL, NULL, NULL, NULL, NULL, ''),
 (7, '1072489444', 1, 15097, 'EDWIN', 'JORGE', 'GONZALES', 'BARRIOS', 3, 'CRA 7 # 78', 1, 1, 'CHILACOS', 'LOS ZIPAS', '8851247', '3104567897', 17380, '1985-01-02', NULL, NULL, NULL, 6, NULL, 11, NULL, NULL, NULL, 0, 0, 0, 0, NULL, 0, '', 0, 25, 0, NULL, 116, NULL, NULL, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 105, 1, 105, 113, 120, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 555, NULL, NULL, NULL, NULL, NULL, ''),
@@ -239,15 +201,12 @@ INSERT INTO `tbdatospersona` (`idpersona`, `numdocper`, `tipdocper`, `lugexpdocp
 --
 
 CREATE TABLE IF NOT EXISTS `tbdiscper` (
-  `iddiscper` int(11) NOT NULL AUTO_INCREMENT,
+  `iddiscper` int(11) NOT NULL,
   `numdocper` int(11) NOT NULL,
   `idclasdis` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
-  `condisper` int(11) DEFAULT NULL,
-  PRIMARY KEY (`iddiscper`),
-  KEY `numdocper` (`numdocper`,`idclasdis`),
-  KEY `idclasdis` (`idclasdis`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `condisper` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -256,14 +215,11 @@ CREATE TABLE IF NOT EXISTS `tbdiscper` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbdiscperfam` (
-  `iddiscperfam` int(11) NOT NULL AUTO_INCREMENT,
+  `iddiscperfam` int(11) NOT NULL,
   `numdocfamper` int(11) NOT NULL,
   `idclasdisc` int(11) NOT NULL,
-  `descripcion` varchar(150) NOT NULL,
-  PRIMARY KEY (`iddiscperfam`),
-  KEY `numdocper` (`numdocfamper`,`idclasdisc`),
-  KEY `idclasdisc` (`idclasdisc`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `descripcion` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -272,11 +228,10 @@ CREATE TABLE IF NOT EXISTS `tbdiscperfam` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbeps` (
-  `codeps` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la eps',
+  `codeps` int(11) NOT NULL COMMENT 'codigo de la eps',
   `nomeps` varchar(50) NOT NULL COMMENT 'nombre de la eps',
-  `teleps` varchar(50) NOT NULL COMMENT 'telefono de la eps',
-  PRIMARY KEY (`codeps`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `teleps` varchar(50) NOT NULL COMMENT 'telefono de la eps'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbeps`
@@ -293,14 +248,12 @@ INSERT INTO `tbeps` (`codeps`, `nomeps`, `teleps`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbexplaboral` (
-  `codexplab` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la experiencia laboral',
+  `codexplab` int(11) NOT NULL COMMENT 'codigo de la experiencia laboral',
   `labexp` varchar(50) NOT NULL COMMENT 'labor de la experiencia',
   `desexp` varchar(50) NOT NULL COMMENT 'descripcion de la experiencia',
   `ingexp` decimal(10,2) NOT NULL COMMENT 'ingreso de la experiencia',
-  `idpersona` int(11) NOT NULL,
-  PRIMARY KEY (`codexplab`),
-  KEY `numdocper` (`idpersona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `idpersona` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbexplaboral`
@@ -319,10 +272,9 @@ INSERT INTO `tbexplaboral` (`codexplab`, `labexp`, `desexp`, `ingexp`, `idperson
 --
 
 CREATE TABLE IF NOT EXISTS `tbfactvive` (
-  `idfactor` int(11) NOT NULL AUTO_INCREMENT,
-  `nomfact` varchar(50) NOT NULL,
-  PRIMARY KEY (`idfactor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idfactor` int(11) NOT NULL,
+  `nomfact` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -331,13 +283,11 @@ CREATE TABLE IF NOT EXISTS `tbfactvive` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbingreso` (
-  `coding` int(11) NOT NULL AUTO_INCREMENT,
+  `coding` int(11) NOT NULL,
   `tipoing` int(11) NOT NULL,
   `ing` decimal(10,2) NOT NULL,
-  `idpersona` int(11) NOT NULL,
-  PRIMARY KEY (`coding`) COMMENT 'Codigo Ingreso',
-  KEY `idpersona` (`idpersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idpersona` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -346,15 +296,12 @@ CREATE TABLE IF NOT EXISTS `tbingreso` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbingresoext` (
-  `codingext` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del ingreso externo',
+  `codingext` int(11) NOT NULL COMMENT 'codigo del ingreso externo',
   `tipingext` int(11) NOT NULL COMMENT 'tipo de ingreso externo',
   `ingext` decimal(10,0) NOT NULL COMMENT 'ingreso en dinero',
   `desingext` varchar(50) NOT NULL COMMENT 'descripcion del ingreso',
-  `idpersona` int(11) NOT NULL,
-  PRIMARY KEY (`codingext`),
-  KEY `tipingext` (`tipingext`),
-  KEY `numdocper` (`idpersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idpersona` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -363,23 +310,46 @@ CREATE TABLE IF NOT EXISTS `tbingresoext` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbnegocio` (
-  `codnegper` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del negocio',
+  `codnegper` int(11) NOT NULL COMMENT 'codigo del negocio',
   `idpersona` int(11) NOT NULL,
   `labneg` varchar(50) NOT NULL COMMENT 'labor del negocio',
   `tipneg` varchar(50) NOT NULL COMMENT 'tipo de negocio',
   `durneg` varchar(30) NOT NULL COMMENT 'duracion del negocio',
   `dirneg` varchar(30) NOT NULL COMMENT 'direccion del negocio',
-  `negactper` int(11) DEFAULT NULL,
-  PRIMARY KEY (`codnegper`),
-  KEY `numdocper` (`idpersona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `negactper` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbnegocio`
 --
 
 INSERT INTO `tbnegocio` (`codnegper`, `idpersona`, `labneg`, `tipneg`, `durneg`, `dirneg`, `negactper`) VALUES
-(1, 9, 'Empresa de venta de empanadas', 'De manufactura', '102', 'cra 4', 0);
+(1, 9, 'Empresa de venta de empanadas', 'De manufactura', '102', 'cra 4', 0),
+(2, 4, 'ventas al por mayor', 'de servicio', '179', 'cra 3', 102),
+(3, 3, 'aaaa', 'aaaa', '103', 'cra', 0),
+(4, 3, 'bbbb', 'eedede', '103', 'czc', 0),
+(5, 3, 'bbbb', 'eedede', '103', 'czc', 0),
+(6, 3, 'hasu', 'HIiiuiu', '102', 'cra', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbobservaciones`
+--
+
+CREATE TABLE IF NOT EXISTS `tbobservaciones` (
+  `codobservacion` int(11) NOT NULL,
+  `descripcion` varchar(500) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `idpersona` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbobservaciones`
+--
+
+INSERT INTO `tbobservaciones` (`codobservacion`, `descripcion`, `fecha`, `idpersona`) VALUES
+(2, 'se cambio el nombre otra vez', '2015-06-13 00:00:00', 4);
 
 -- --------------------------------------------------------
 
@@ -388,10 +358,9 @@ INSERT INTO `tbnegocio` (`codnegper`, `idpersona`, `labneg`, `tipneg`, `durneg`,
 --
 
 CREATE TABLE IF NOT EXISTS `tbopcionnomatricula` (
-  `idtbopcionnomatricula` int(11) NOT NULL AUTO_INCREMENT,
-  `opcion` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtbopcionnomatricula`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=15 ;
+  `idtbopcionnomatricula` int(11) NOT NULL,
+  `opcion` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbopcionnomatricula`
@@ -420,10 +389,9 @@ INSERT INTO `tbopcionnomatricula` (`idtbopcionnomatricula`, `opcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbparametro` (
-  `codpar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del parametro',
-  `nompar` varchar(50) NOT NULL COMMENT 'nombre del parametro',
-  PRIMARY KEY (`codpar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+  `codpar` int(11) NOT NULL COMMENT 'codigo del parametro',
+  `nompar` varchar(50) NOT NULL COMMENT 'nombre del parametro'
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbparametro`
@@ -477,11 +445,8 @@ INSERT INTO `tbparametro` (`codpar`, `nompar`) VALUES
 CREATE TABLE IF NOT EXISTS `tbperfac` (
   `idpersona` int(11) NOT NULL,
   `idfactores` int(11) NOT NULL,
-  `idperfac` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idperfac`),
-  KEY `idpersona` (`idpersona`,`idfactores`),
-  KEY `idfactores` (`idfactores`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idperfac` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -490,14 +455,10 @@ CREATE TABLE IF NOT EXISTS `tbperfac` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbperxreh` (
-  `idtbperxreh` int(11) NOT NULL AUTO_INCREMENT,
+  `idtbperxreh` int(11) NOT NULL,
   `idper` int(11) DEFAULT NULL,
-  `idreh` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idtbperxreh`),
-  KEY `idper` (`idper`),
-  KEY `idreh` (`idreh`),
-  KEY `idper_2` (`idper`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
+  `idreh` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -506,10 +467,9 @@ CREATE TABLE IF NOT EXISTS `tbperxreh` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbprofesion` (
-  `idprofesion` int(11) NOT NULL AUTO_INCREMENT,
-  `nombreprof` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idprofesion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+  `idprofesion` int(11) NOT NULL,
+  `nombreprof` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbprofesion`
@@ -528,8 +488,7 @@ INSERT INTO `tbprofesion` (`idprofesion`, `nombreprof`) VALUES
 
 CREATE TABLE IF NOT EXISTS `tbrehabilitacion` (
   `idtbrehabilitacion` int(11) NOT NULL,
-  `nomreh` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtbrehabilitacion`)
+  `nomreh` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -539,10 +498,9 @@ CREATE TABLE IF NOT EXISTS `tbrehabilitacion` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbservibas` (
-  `codservbas` int(11) NOT NULL AUTO_INCREMENT,
-  `desservbas` varchar(50) NOT NULL COMMENT 'Nombre del servicio basico',
-  PRIMARY KEY (`codservbas`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `codservbas` int(11) NOT NULL,
+  `desservbas` varchar(50) NOT NULL COMMENT 'Nombre del servicio basico'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbservibas`
@@ -562,14 +520,10 @@ INSERT INTO `tbservibas` (`codservbas`, `desservbas`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbservper` (
-  `codservbas` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del servicio basico',
+  `codservbas` int(11) NOT NULL COMMENT 'codigo del servicio basico',
   `idpersona` int(11) NOT NULL COMMENT 'numero de documento',
-  `numservbas` int(11) NOT NULL,
-  PRIMARY KEY (`codservbas`),
-  KEY `nomservbas` (`numservbas`),
-  KEY `numservbas` (`numservbas`),
-  KEY `numdocper` (`idpersona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `numservbas` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbservper`
@@ -589,10 +543,9 @@ INSERT INTO `tbservper` (`codservbas`, `idpersona`, `numservbas`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbtipodiscapacidad` (
-  `idtipodis` int(11) NOT NULL AUTO_INCREMENT,
-  `nomtipodis` varchar(60) NOT NULL,
-  PRIMARY KEY (`idtipodis`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idtipodis` int(11) NOT NULL,
+  `nomtipodis` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -601,10 +554,9 @@ CREATE TABLE IF NOT EXISTS `tbtipodiscapacidad` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbtipoingreso` (
-  `idtipoingreso` int(11) NOT NULL AUTO_INCREMENT,
-  `tipoingreso` varchar(50) NOT NULL,
-  PRIMARY KEY (`idtipoingreso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idtipoingreso` int(11) NOT NULL,
+  `tipoingreso` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -615,8 +567,7 @@ CREATE TABLE IF NOT EXISTS `tbtipoingreso` (
 CREATE TABLE IF NOT EXISTS `tbubicacion` (
   `codubi` int(11) NOT NULL COMMENT 'codigo de la ubicación',
   `nomubi` varchar(50) NOT NULL COMMENT 'nombre de la ubicación',
-  `depubi` int(5) NOT NULL COMMENT 'depende de la ubicación',
-  PRIMARY KEY (`codubi`)
+  `depubi` int(5) NOT NULL COMMENT 'depende de la ubicación'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1793,8 +1744,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `depusu` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `carusu` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telusu` varchar(12) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `perfil` enum('Administrador','Digitador') COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`documento`)
+  `perfil` enum('Administrador','Digitador') COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -1804,13 +1754,10 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbvalor` (
-  `codval` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del valor',
+  `codval` int(11) NOT NULL COMMENT 'codigo del valor',
   `nomval` varchar(100) NOT NULL COMMENT 'nombre del valor',
-  `codpar` int(11) NOT NULL COMMENT 'codigo del parametro',
-  PRIMARY KEY (`codval`),
-  KEY `codpar` (`codpar`),
-  KEY `codpar_2` (`codpar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=181 ;
+  `codpar` int(11) NOT NULL COMMENT 'codigo del parametro'
+) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbvalor`
@@ -1996,11 +1943,10 @@ INSERT INTO `tbvalor` (`codval`, `nomval`, `codpar`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbvereda` (
-  `codver` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la vereda',
+  `codver` int(11) NOT NULL COMMENT 'codigo de la vereda',
   `nomver` varchar(50) NOT NULL COMMENT 'nombre de la vereda',
-  `desubver` varchar(50) NOT NULL COMMENT 'descripcion de la ubicación',
-  PRIMARY KEY (`codver`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `desubver` varchar(50) NOT NULL COMMENT 'descripcion de la ubicación'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbvereda`
@@ -2016,11 +1962,10 @@ INSERT INTO `tbvereda` (`codver`, `nomver`, `desubver`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbzona` (
-  `codzona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la zona',
+  `codzona` int(11) NOT NULL COMMENT 'codigo de la zona',
   `nomzona` varchar(50) NOT NULL COMMENT 'nombre de la zona',
-  `deszona` varchar(50) NOT NULL COMMENT 'descripcion de la zona',
-  PRIMARY KEY (`codzona`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `deszona` varchar(50) NOT NULL COMMENT 'descripcion de la zona'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbzona`
@@ -2038,6 +1983,7 @@ CREATE TABLE IF NOT EXISTS `vieubica` (
 `codubi` int(11)
 ,`nomubi` varchar(50)
 );
+
 -- --------------------------------------------------------
 
 --
@@ -2048,6 +1994,307 @@ DROP TABLE IF EXISTS `vieubica`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vieubica` AS select `tbubicacion`.`codubi` AS `codubi`,`tbubicacion`.`nomubi` AS `nomubi` from `tbubicacion` where (`tbubicacion`.`depubi` = 0);
 
 --
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `tbcapacitacion`
+--
+ALTER TABLE `tbcapacitacion`
+  ADD PRIMARY KEY (`codcapper`), ADD KEY `idpersona` (`idpersona`);
+
+--
+-- Indices de la tabla `tbclasediscapacidad`
+--
+ALTER TABLE `tbclasediscapacidad`
+  ADD PRIMARY KEY (`idclase`), ADD KEY `idtipodis` (`idtipodis`);
+
+--
+-- Indices de la tabla `tbdatosfamiliaper`
+--
+ALTER TABLE `tbdatosfamiliaper`
+  ADD PRIMARY KEY (`idfamiliaper`), ADD KEY `numdocper` (`numdocper`), ADD KEY `genfam` (`genfam`), ADD KEY `nivescfam` (`nivescfam`), ADD KEY `genfam_2` (`genfam`), ADD KEY `genfam_3` (`genfam`), ADD KEY `nivescfam_2` (`nivescfam`), ADD KEY `numdocper_2` (`numdocper`), ADD KEY `parperfam` (`parperfam`), ADD KEY `etniaper` (`etniaper`);
+
+--
+-- Indices de la tabla `tbdatospersona`
+--
+ALTER TABLE `tbdatospersona`
+  ADD PRIMARY KEY (`idpersona`), ADD KEY `tipdocper` (`tipdocper`), ADD KEY `tipdocper_2` (`tipdocper`), ADD KEY `tipdocper_3` (`tipdocper`), ADD KEY `lugexpdocper` (`lugexpdocper`), ADD KEY `genper` (`genper`), ADD KEY `genper_2` (`genper`), ADD KEY `zonper` (`zonper`), ADD KEY `verper` (`verper`), ADD KEY `secper` (`secper`), ADD KEY `lugnacper` (`lugnacper`), ADD KEY `lugexpulper` (`lugexpulper`), ADD KEY `estcivper` (`estcivper`), ADD KEY `nivescper` (`nivescper`), ADD KEY `tipvivper` (`tipvivper`), ADD KEY `convivper` (`convivper`), ADD KEY `regsegsocper` (`regsegsocper`), ADD KEY `epsper` (`epsper`), ADD KEY `tipfamper` (`tipfamper`), ADD KEY `etniaper` (`etniaper`), ADD KEY `geslanper` (`geslanper`), ADD KEY `fk_tbdatospersona_tbprofesion1_idx` (`proper`), ADD KEY `fk_tbdatospersona_tbopcionnomatricula1_idx` (`nomatriper`), ADD KEY `usuario` (`usuario`);
+
+--
+-- Indices de la tabla `tbdiscper`
+--
+ALTER TABLE `tbdiscper`
+  ADD PRIMARY KEY (`iddiscper`), ADD KEY `numdocper` (`numdocper`,`idclasdis`), ADD KEY `idclasdis` (`idclasdis`);
+
+--
+-- Indices de la tabla `tbdiscperfam`
+--
+ALTER TABLE `tbdiscperfam`
+  ADD PRIMARY KEY (`iddiscperfam`), ADD KEY `numdocper` (`numdocfamper`,`idclasdisc`), ADD KEY `idclasdisc` (`idclasdisc`);
+
+--
+-- Indices de la tabla `tbeps`
+--
+ALTER TABLE `tbeps`
+  ADD PRIMARY KEY (`codeps`);
+
+--
+-- Indices de la tabla `tbexplaboral`
+--
+ALTER TABLE `tbexplaboral`
+  ADD PRIMARY KEY (`codexplab`), ADD KEY `numdocper` (`idpersona`);
+
+--
+-- Indices de la tabla `tbfactvive`
+--
+ALTER TABLE `tbfactvive`
+  ADD PRIMARY KEY (`idfactor`);
+
+--
+-- Indices de la tabla `tbingreso`
+--
+ALTER TABLE `tbingreso`
+  ADD PRIMARY KEY (`coding`) COMMENT 'Codigo Ingreso', ADD KEY `idpersona` (`idpersona`);
+
+--
+-- Indices de la tabla `tbingresoext`
+--
+ALTER TABLE `tbingresoext`
+  ADD PRIMARY KEY (`codingext`), ADD KEY `tipingext` (`tipingext`), ADD KEY `numdocper` (`idpersona`);
+
+--
+-- Indices de la tabla `tbnegocio`
+--
+ALTER TABLE `tbnegocio`
+  ADD PRIMARY KEY (`codnegper`), ADD KEY `numdocper` (`idpersona`);
+
+--
+-- Indices de la tabla `tbobservaciones`
+--
+ALTER TABLE `tbobservaciones`
+  ADD PRIMARY KEY (`codobservacion`), ADD KEY `tbobservaciones_ibfk_1` (`idpersona`);
+
+--
+-- Indices de la tabla `tbopcionnomatricula`
+--
+ALTER TABLE `tbopcionnomatricula`
+  ADD PRIMARY KEY (`idtbopcionnomatricula`);
+
+--
+-- Indices de la tabla `tbparametro`
+--
+ALTER TABLE `tbparametro`
+  ADD PRIMARY KEY (`codpar`);
+
+--
+-- Indices de la tabla `tbperfac`
+--
+ALTER TABLE `tbperfac`
+  ADD PRIMARY KEY (`idperfac`), ADD KEY `idpersona` (`idpersona`,`idfactores`), ADD KEY `idfactores` (`idfactores`);
+
+--
+-- Indices de la tabla `tbperxreh`
+--
+ALTER TABLE `tbperxreh`
+  ADD PRIMARY KEY (`idtbperxreh`), ADD KEY `idper` (`idper`), ADD KEY `idreh` (`idreh`), ADD KEY `idper_2` (`idper`);
+
+--
+-- Indices de la tabla `tbprofesion`
+--
+ALTER TABLE `tbprofesion`
+  ADD PRIMARY KEY (`idprofesion`);
+
+--
+-- Indices de la tabla `tbrehabilitacion`
+--
+ALTER TABLE `tbrehabilitacion`
+  ADD PRIMARY KEY (`idtbrehabilitacion`);
+
+--
+-- Indices de la tabla `tbservibas`
+--
+ALTER TABLE `tbservibas`
+  ADD PRIMARY KEY (`codservbas`);
+
+--
+-- Indices de la tabla `tbservper`
+--
+ALTER TABLE `tbservper`
+  ADD PRIMARY KEY (`codservbas`), ADD KEY `nomservbas` (`numservbas`), ADD KEY `numservbas` (`numservbas`), ADD KEY `numdocper` (`idpersona`);
+
+--
+-- Indices de la tabla `tbtipodiscapacidad`
+--
+ALTER TABLE `tbtipodiscapacidad`
+  ADD PRIMARY KEY (`idtipodis`);
+
+--
+-- Indices de la tabla `tbtipoingreso`
+--
+ALTER TABLE `tbtipoingreso`
+  ADD PRIMARY KEY (`idtipoingreso`);
+
+--
+-- Indices de la tabla `tbubicacion`
+--
+ALTER TABLE `tbubicacion`
+  ADD PRIMARY KEY (`codubi`);
+
+--
+-- Indices de la tabla `tbusuario`
+--
+ALTER TABLE `tbusuario`
+  ADD PRIMARY KEY (`documento`);
+
+--
+-- Indices de la tabla `tbvalor`
+--
+ALTER TABLE `tbvalor`
+  ADD PRIMARY KEY (`codval`), ADD KEY `codpar` (`codpar`), ADD KEY `codpar_2` (`codpar`);
+
+--
+-- Indices de la tabla `tbvereda`
+--
+ALTER TABLE `tbvereda`
+  ADD PRIMARY KEY (`codver`);
+
+--
+-- Indices de la tabla `tbzona`
+--
+ALTER TABLE `tbzona`
+  ADD PRIMARY KEY (`codzona`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `tbcapacitacion`
+--
+ALTER TABLE `tbcapacitacion`
+  MODIFY `codcapper` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo capacitacion',AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `tbclasediscapacidad`
+--
+ALTER TABLE `tbclasediscapacidad`
+  MODIFY `idclase` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbdatosfamiliaper`
+--
+ALTER TABLE `tbdatosfamiliaper`
+  MODIFY `idfamiliaper` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbdatospersona`
+--
+ALTER TABLE `tbdatospersona`
+  MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `tbdiscper`
+--
+ALTER TABLE `tbdiscper`
+  MODIFY `iddiscper` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbdiscperfam`
+--
+ALTER TABLE `tbdiscperfam`
+  MODIFY `iddiscperfam` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbeps`
+--
+ALTER TABLE `tbeps`
+  MODIFY `codeps` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la eps',AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `tbexplaboral`
+--
+ALTER TABLE `tbexplaboral`
+  MODIFY `codexplab` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la experiencia laboral',AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `tbfactvive`
+--
+ALTER TABLE `tbfactvive`
+  MODIFY `idfactor` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbingreso`
+--
+ALTER TABLE `tbingreso`
+  MODIFY `coding` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbingresoext`
+--
+ALTER TABLE `tbingresoext`
+  MODIFY `codingext` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del ingreso externo';
+--
+-- AUTO_INCREMENT de la tabla `tbnegocio`
+--
+ALTER TABLE `tbnegocio`
+  MODIFY `codnegper` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del negocio',AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `tbobservaciones`
+--
+ALTER TABLE `tbobservaciones`
+  MODIFY `codobservacion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `tbopcionnomatricula`
+--
+ALTER TABLE `tbopcionnomatricula`
+  MODIFY `idtbopcionnomatricula` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de la tabla `tbparametro`
+--
+ALTER TABLE `tbparametro`
+  MODIFY `codpar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del parametro',AUTO_INCREMENT=40;
+--
+-- AUTO_INCREMENT de la tabla `tbperfac`
+--
+ALTER TABLE `tbperfac`
+  MODIFY `idperfac` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbperxreh`
+--
+ALTER TABLE `tbperxreh`
+  MODIFY `idtbperxreh` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbprofesion`
+--
+ALTER TABLE `tbprofesion`
+  MODIFY `idprofesion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `tbservibas`
+--
+ALTER TABLE `tbservibas`
+  MODIFY `codservbas` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `tbservper`
+--
+ALTER TABLE `tbservper`
+  MODIFY `codservbas` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del servicio basico',AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `tbtipodiscapacidad`
+--
+ALTER TABLE `tbtipodiscapacidad`
+  MODIFY `idtipodis` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbtipoingreso`
+--
+ALTER TABLE `tbtipoingreso`
+  MODIFY `idtipoingreso` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbvalor`
+--
+ALTER TABLE `tbvalor`
+  MODIFY `codval` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del valor',AUTO_INCREMENT=181;
+--
+-- AUTO_INCREMENT de la tabla `tbvereda`
+--
+ALTER TABLE `tbvereda`
+  MODIFY `codver` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la vereda',AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `tbzona`
+--
+ALTER TABLE `tbzona`
+  MODIFY `codzona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la zona',AUTO_INCREMENT=2;
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -2055,89 +2302,95 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Filtros para la tabla `tbcapacitacion`
 --
 ALTER TABLE `tbcapacitacion`
-  ADD CONSTRAINT `tbcapacitacion_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbcapacitacion_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbclasediscapacidad`
 --
 ALTER TABLE `tbclasediscapacidad`
-  ADD CONSTRAINT `tbclasediscapacidad_ibfk_1` FOREIGN KEY (`idtipodis`) REFERENCES `tbtipodiscapacidad` (`idtipodis`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbclasediscapacidad_ibfk_1` FOREIGN KEY (`idtipodis`) REFERENCES `tbtipodiscapacidad` (`idtipodis`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbdatospersona`
 --
 ALTER TABLE `tbdatospersona`
-  ADD CONSTRAINT `fk_tbdatospersona_tbopcionnomatricula1` FOREIGN KEY (`nomatriper`) REFERENCES `tbopcionnomatricula` (`idtbopcionnomatricula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbdatospersona_tbprofesion1` FOREIGN KEY (`proper`) REFERENCES `tbprofesion` (`idprofesion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tbdatospersona_ibfk_11` FOREIGN KEY (`zonper`) REFERENCES `tbzona` (`codzona`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbdatospersona_ibfk_12` FOREIGN KEY (`verper`) REFERENCES `tbvereda` (`codver`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbdatospersona_ibfk_13` FOREIGN KEY (`epsper`) REFERENCES `tbeps` (`codeps`) ON UPDATE CASCADE;
+ADD CONSTRAINT `fk_tbdatospersona_tbopcionnomatricula1` FOREIGN KEY (`nomatriper`) REFERENCES `tbopcionnomatricula` (`idtbopcionnomatricula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_tbdatospersona_tbprofesion1` FOREIGN KEY (`proper`) REFERENCES `tbprofesion` (`idprofesion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `tbdatospersona_ibfk_11` FOREIGN KEY (`zonper`) REFERENCES `tbzona` (`codzona`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbdatospersona_ibfk_12` FOREIGN KEY (`verper`) REFERENCES `tbvereda` (`codver`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbdatospersona_ibfk_13` FOREIGN KEY (`epsper`) REFERENCES `tbeps` (`codeps`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbdiscper`
 --
 ALTER TABLE `tbdiscper`
-  ADD CONSTRAINT `tbdiscper_ibfk_2` FOREIGN KEY (`idclasdis`) REFERENCES `tbclasediscapacidad` (`idclase`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbdiscper_ibfk_3` FOREIGN KEY (`numdocper`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbdiscper_ibfk_2` FOREIGN KEY (`idclasdis`) REFERENCES `tbclasediscapacidad` (`idclase`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbdiscper_ibfk_3` FOREIGN KEY (`numdocper`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbdiscperfam`
 --
 ALTER TABLE `tbdiscperfam`
-  ADD CONSTRAINT `tbdiscperfam_ibfk_2` FOREIGN KEY (`idclasdisc`) REFERENCES `tbclasediscapacidad` (`idclase`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbdiscperfam_ibfk_3` FOREIGN KEY (`numdocfamper`) REFERENCES `tbdatosfamiliaper` (`idfamiliaper`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbdiscperfam_ibfk_2` FOREIGN KEY (`idclasdisc`) REFERENCES `tbclasediscapacidad` (`idclase`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbdiscperfam_ibfk_3` FOREIGN KEY (`numdocfamper`) REFERENCES `tbdatosfamiliaper` (`idfamiliaper`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbexplaboral`
 --
 ALTER TABLE `tbexplaboral`
-  ADD CONSTRAINT `tbexplaboral_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbexplaboral_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbingreso`
 --
 ALTER TABLE `tbingreso`
-  ADD CONSTRAINT `tbingreso_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbingreso_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbingresoext`
 --
 ALTER TABLE `tbingresoext`
-  ADD CONSTRAINT `tbingresoext_ibfk_2` FOREIGN KEY (`tipingext`) REFERENCES `tbtipoingreso` (`idtipoingreso`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbingresoext_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbingresoext_ibfk_2` FOREIGN KEY (`tipingext`) REFERENCES `tbtipoingreso` (`idtipoingreso`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbingresoext_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbnegocio`
 --
 ALTER TABLE `tbnegocio`
-  ADD CONSTRAINT `tbnegocio_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbnegocio_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tbobservaciones`
+--
+ALTER TABLE `tbobservaciones`
+ADD CONSTRAINT `tbobservaciones_ibfk_1` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbperfac`
 --
 ALTER TABLE `tbperfac`
-  ADD CONSTRAINT `tbperfac_ibfk_2` FOREIGN KEY (`idfactores`) REFERENCES `tbfactvive` (`idfactor`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbperfac_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbperfac_ibfk_2` FOREIGN KEY (`idfactores`) REFERENCES `tbfactvive` (`idfactor`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbperfac_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbperxreh`
 --
 ALTER TABLE `tbperxreh`
-  ADD CONSTRAINT `tbperxreh_ibfk_1` FOREIGN KEY (`idreh`) REFERENCES `tbrehabilitacion` (`idtbrehabilitacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbperxreh_ibfk_2` FOREIGN KEY (`idper`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbperxreh_ibfk_1` FOREIGN KEY (`idreh`) REFERENCES `tbrehabilitacion` (`idtbrehabilitacion`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbperxreh_ibfk_2` FOREIGN KEY (`idper`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbservper`
 --
 ALTER TABLE `tbservper`
-  ADD CONSTRAINT `tbservper_ibfk_2` FOREIGN KEY (`numservbas`) REFERENCES `tbservibas` (`codservbas`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbservper_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbservper_ibfk_2` FOREIGN KEY (`numservbas`) REFERENCES `tbservibas` (`codservbas`) ON UPDATE CASCADE,
+ADD CONSTRAINT `tbservper_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `tbdatospersona` (`idpersona`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbvalor`
 --
 ALTER TABLE `tbvalor`
-  ADD CONSTRAINT `tbvalor_ibfk_1` FOREIGN KEY (`codpar`) REFERENCES `tbparametro` (`codpar`) ON UPDATE CASCADE;
+ADD CONSTRAINT `tbvalor_ibfk_1` FOREIGN KEY (`codpar`) REFERENCES `tbparametro` (`codpar`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

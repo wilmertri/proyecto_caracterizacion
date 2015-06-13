@@ -23,7 +23,7 @@
 		$ins -> updneg($codnegper ,$labneg, $tipneg, $durneg, $dirneg, $negactper);
 	}
 	// Insertar datos
-	if($labneg && $tipneg && $durneg && $dirneg && $id && !$actu) {
-		$ins -> insneg($labneg, $tipneg, $durneg, $dirneg, $negactper, $id);
+	if($id && $labneg && $tipneg && $durneg && $dirneg && !$actu) {
+		$ins -> insneg($id, $labneg, $tipneg, $durneg, $dirneg, $negactper);
 	}
 ?>
