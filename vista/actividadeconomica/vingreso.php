@@ -6,7 +6,10 @@
 	<form name="form1" method="POST" action="">
 		<div class="row">
 			<div class="form-group">
-                <label for="Tipo ingreso">Tipo ingreso</label>
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
+            </div>
+			<div class="form-group">
+                <label for="Tipo ingreso">Tipo ingreso <span style="color:red;">*</span></label>
                 <select name="tipoing" class="form-control">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -19,8 +22,8 @@
 				</select>
             </div>
 			<div class="form-group">
-                <label for="ingreso">ingreso</label>
-                <input name="ing" type="text" class="form-control" placeholder="ej: 680000" pattern="[0-9]{1,10}">
+                <label for="ingreso">ingreso <span style="color:red;">*</span></label>
+                <input name="ing" type="text" class="form-control" placeholder="ej: 680000" pattern="[0-9]{1,10}" required>
             </div>	
 			<div class="form-group">
                 <input type="submit" class="btn btn-success" value="Enviar">

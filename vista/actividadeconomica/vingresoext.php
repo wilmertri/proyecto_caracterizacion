@@ -6,7 +6,10 @@
 	<form name="form1" method="POST" action="">
 		<div class="row">
 			<div class="form-group">
-				<label for="tipo de ingreso">Tipo de ingreso externo</label>
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
+            </div>
+			<div class="form-group">
+				<label for="tipo de ingreso">Tipo de ingreso externo <span style="color:red;">*</span></label>
                 <select name="tipodeingreso" class="form-control">
 				<option value=0> Seleccione una opcion </option>
 					<?php 
@@ -19,12 +22,12 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="ingreso en dinero">Ingreso en dinero</label>
-				<input class="form-control" type="text" name="ingresoendinero">
+				<label for="ingreso en dinero">Ingreso en dinero <span style="color:red;">*</span></label>
+				<input class="form-control" type="text" name="ingresoendinero" placeholder="ej: 680000" pattern="[0-9]{1,10}" required>
 			</div>
 			<div class="form-group">
-				<label for="Descripcion de ingreso">Descripcion de ingreso</label>
-				<input class="form-control" type="text" name="descdeldinero">
+				<label for="Descripcion de ingreso">Descripcion de ingreso <span style="color:red;">*</span></label>
+				<input class="form-control" type="text" name="descdeldinero" placeholder="Escriba aqui una descripcion" maxlength="50" required>
 			</div>
 		</div>
 		<div class="row">
@@ -53,7 +56,7 @@
 			<tr>
 				<td align = "left"><?php echo $dato[$i]["codingext"]; ?></td>
 				<td align = "left"><?php /*$tipoingreso1 = $ins->seltip1($dato1[$i]["tipingext"]);?><?php echo $tipoingreso1[$i]['tipoingreso']*/ echo $dato[$i]["tipingext"]; ?></td>
-				<td align = "left"><?php echo $dato[$i]["ingext"]; ?></td>
+				<td align = "left"><?php echo "$ ".$dato[$i]["ingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desingext"]; ?></td>
 				<td align = "center"><a href ="home.php?var=17&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-success">Editar</a></td>
 			</tr>

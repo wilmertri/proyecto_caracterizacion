@@ -3,7 +3,7 @@
 ?>
 <h1> Actualizar Datos Ingreso Externo </h1>
 <div class="forms">
-	<form name="form1" method="POST" action="home.php?var=16&id=<?php echo $dato1[0]['numdocper'] ?>">
+	<form name="form1" method="POST" action="home.php?var=16&id=<?php echo $dato1[0]['idpersona'] ?>">
 		<div class="row">
 			<div class="form-group">
 				<label for="Codigo de Ingreso Externo">Codigo</label>
@@ -59,7 +59,7 @@
 			<tr>
 				<td align = "left"><?php echo $dato[$i]["codingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["tipingext"]; ?></td>
-				<td align = "left"><?php echo $dato[$i]["ingext"]; ?></td>
+				<td align = "left"><?php echo "$ ".$dato[$i]["ingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desingext"]; ?></td>
 				<td align = "center"><a href ="home.php?var=17&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-success">Editar</a></td>
 			</tr>

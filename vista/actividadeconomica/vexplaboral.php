@@ -10,11 +10,11 @@
             </div>
 			<div class="form-group">
                 <label for="Labor de la experiencia">Labor que desempeño <span style="color:red;">*</span></label>
-                <input name="labexp" type="text" class="form-control" maxlength="50" required>
+                <input name="labexp" type="text" class="form-control" placeholder="ej: asistente de produccion" maxlength="50" required>
             </div>
 			<div class="form-group">
                 <label for="Descripcion de la experiencia">Descripcion de la labor <span style="color:red;">*</span></label>
-                <input name="desexp" type="text" class="form-control" maxlength="50" required>
+                <input name="desexp" type="text" class="form-control" placeholder="Escriba aqui una descripcion" maxlength="50" required>
             </div>	
 			
 			<div class="form-group">
