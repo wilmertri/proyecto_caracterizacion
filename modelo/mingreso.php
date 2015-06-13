@@ -9,7 +9,7 @@
 			return $this->mostrar_nombre_valores($codval);
 		}
                        
-		//Función para obtener la ocupacion actual
+		//Función para obtener el tipo ingreso
 		function get_tipo_ingreso()
 		{
 			return $this->seleccionar_valores_de_parametro(32);

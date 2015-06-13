@@ -44,6 +44,7 @@
 		<?php
 			$dato = $ins -> selingreso2($id);
 			for($i=0;$i<count($dato);$i++) {
+				$tiping2 = $ins->get_valor($dato[$i]["tipoing"]);
 		?>
 		<tr>
 			<td align = "left"><?php echo $dato[$i]["coding"]; ?></td>
