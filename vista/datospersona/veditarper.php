@@ -393,6 +393,16 @@
             </div>
 		</div>
 		<div class="row">
+			<div class="form-group col-lg-6">
+				<label for="Fecha de la edicion">Fecha<span style="color:red;">*</span></label>
+				<input name="fecha" type="date" class="form-control" required>
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Observacion">Observación<span style="color:red;">*</span></label>
+                <input name="descripcion" type="text" class="form-control"  style="text-transform:uppercase;" placeholder="Cambios realizados" required>
+            </div>
+		</div>
+		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
             </div>

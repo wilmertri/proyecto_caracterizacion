@@ -1,5 +1,6 @@
 <?php
 	include ("modelo/mdatospersona.php");
+	
 	$ins = new mdatospersona();
 	
 	$idpersona = isset($_POST["idpersona"]) ? $_POST["idpersona"]:NULL;
@@ -34,6 +35,15 @@
 	$dato 		= $ins->selper();
 	$dato1 		= $ins->selper1($id);
 
+	$codobservacion = isset($_POST["codobservacion"]) ? $_POST["codobservacion"]:NULL;
+	
+	$fecha = isset($_POST["fecha"]) ? $_POST["fecha"]:NULL;
+	$descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"]:NULL;
+	
+	if($actu){
+	$idpersona=$id;
+	}
+	
 
 	//echo "Tipdoc: " . $dato1[0]['tipdocper'];
 	//echo "lugexp: " . $dato1[0]['lugexpdocper'];
@@ -84,5 +94,17 @@
 	{
 		//$idpersona = $idpersona;
 		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil);
+	}
+	
+	
+	// Actualizar datos
+	
+	if($descripcion && $actu) {
+		$ins -> updobs($codobservacion, $fecha, $descripcion); 
+	}
+	// Insertar datos
+	
+	if($descripcion && $actu) {
+		$ins -> insobs($idpersona, $fecha, $descripcion); 
 	}
 ?>

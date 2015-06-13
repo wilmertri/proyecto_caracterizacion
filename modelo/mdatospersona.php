@@ -103,6 +103,42 @@
 		{
 			return $this->calcular_edad($fecnac);
 		}
+		
+		
+		
+		//Inserar
+		function insobs($idpersona, $fecha, $descripcion) {
+			$sql = "INSERT INTO tbobservaciones(idpersona, fecha, descripcion) VALUES('".$idpersona."','".$fecha."','".$descripcion."');";
+			$this->cons($sql);
+		}
+		//Actualizar
+		function updobs($codobservacion, $fecha, $descripcion) {
+		
+			$sql = "UPDATE tbobservaciones SET fecha = '".$fecha."',
+			descripcion = '".$descripcion."' WHERE codobservacion = '".$codobservacion."';";
+			$this -> cons($sql);	
+		}
+		//Borrar
+		function delobs($codobservacion) {
+			$sql = "DELETE FROM tbobservaciones WHERE codobservacion = '".$codobservacion."';";
+			$this -> cons($sql);
+		}
+		//Seleccionar para mostrar
+		function selobs() {
+			$sql = "SELECT * FROM tbobservaciones;";
+			$conexionBD = new conexion();
+			$conexionBD -> conectarBD();
+			$datos = $conexionBD -> ejeCon($sql, 0);
+			return $datos;
+		}
+		// Seleccionar para editar
+		function selobs1($codobservacion) {
+			$sql = "SELECT * FROM tbobservaciones WHERE codobservacion = '".$codobservacion."';";
+			$conexionBD = new conexion();
+			$conexionBD -> conectarBD();
+			$datos = $conexionBD -> ejeCon($sql, 0);
+			return $datos;
+		}
 
 	}
 ?>
