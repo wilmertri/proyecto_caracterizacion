@@ -48,7 +48,7 @@
 		?>
 		<tr>
 			<td align = "left"><?php echo $dato[$i]["coding"]; ?></td>
-			<td align = "center"><?php echo $dato[$i]["tipoing"]; ?></td>
+			<td align = "center"><?php echo $tiping2[0]["nomval"]; ?></td>
 			<td align = "left">$ <?php echo $dato[$i]["ing"]; ?></td>
 			<td><a href="home.php?var=93&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["coding"]; ?>" class="btn btn-success">Editar</a></td>
 		</tr>

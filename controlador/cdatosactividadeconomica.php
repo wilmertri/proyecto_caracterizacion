@@ -9,6 +9,14 @@
 	if ($datosactividad[0]['numpercar']) 
 	{
 		$PersonasaCargo	= $datosactividad[0]['numpercar'];
+		if ($PersonasaCargo == 1)
+		{
+			$PersonasaCargo	= $datosactividad[0]['numpercar']." persona";
+		}
+		else
+		{
+			$PersonasaCargo	= $datosactividad[0]['numpercar']." personas";	
+		}
 	}
 	else
 	{

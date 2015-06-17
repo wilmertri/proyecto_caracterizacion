@@ -55,10 +55,11 @@
 			<?php
 				$dato = $ins->selingext2($id);
 				for($i=0;$i<count($dato);$i++) {
+					$tipoingreso2 = $ins->seltip1($dato[$i]["tipingext"]);
 			?>
 			<tr>
 				<td align = "left"><?php echo $dato[$i]["codingext"]; ?></td>
-				<td align = "left"><?php echo $dato[$i]["tipingext"]; ?></td>
+				<td align = "left"><?php echo $tipoingreso2[0]["tipoingreso"]; ?></td>
 				<td align = "left"><?php echo "$ ".$dato[$i]["ingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desingext"]; ?></td>
 				<td align = "center"><a href ="home.php?var=17&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-success">Editar</a></td>
