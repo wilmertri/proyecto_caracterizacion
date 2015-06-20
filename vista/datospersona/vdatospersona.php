@@ -50,11 +50,19 @@
 	{
 		if (document.getElementById){ //se obtiene el id
 			var el = document.getElementById('mosgen'); //se define la variable "el" igual a nuestro div
+			var lb = document.getElementById('moslib');
+			var lb1 = document.getElementById('moslib1');
 			el.style.display = 'none';
+			lb.style.display = 'none';
+			lb1.style.display = 'none';
 			if (val=='4'){
 				el.style.display = 'block';
+				lb.style.display = 'none';
+				lb1.style.display = 'none';
 			}else{
 				el.style.display = 'none';
+				lb.style.display = 'block';
+				lb1.style.display = 'block';
 			}
 		}
 	}
@@ -338,7 +346,7 @@
             </div>
 		</div>
 		<div class="row">
-			<div class="form-group col-lg-6">
+			<div class="form-group col-lg-6" id="moslib">
                 <label for="Libreta Militar">Libreta Militar</label>
                 <select name="libretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
@@ -351,7 +359,7 @@
 					?>
 				</select>
             </div>
-			<div class="form-group col-lg-6">
+			<div class="form-group col-lg-6" id="moslib1"> 
                 <label for="Libreta Militar Exención">La Posesión de la Libreta Se Debe a la Exención del Servicio Militar por su Condición de Victima del Conflicto </label>
                 <select name="tramlibretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
