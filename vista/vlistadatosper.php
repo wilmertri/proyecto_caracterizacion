@@ -49,9 +49,3 @@
         ?>
 	 </tbody>
 </table>
-    <div class="row">
-        <div class="form-group col-md-12 center">
-    		
-                <a href="home.php?var=2" class="btn btn-success" >Insertar</a>
-        </div>
-    </div>

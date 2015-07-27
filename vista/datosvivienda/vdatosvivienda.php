@@ -153,7 +153,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="form-group col-lg-6">
+			<div class="form-group col-lg-12 center">
 				<input type="submit" class="btn btn-success"> <a href="home.php?var=70&id=<?= $id; ?>" class="btn btn-success">Volver</a>
 			</div>	
 		</div>
