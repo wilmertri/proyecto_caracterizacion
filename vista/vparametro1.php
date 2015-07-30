@@ -16,7 +16,7 @@
                 <input name="nompar" type="text" value = "<?php echo $dat5[0]['nompar'] ?>"  class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Actualizar">
+                <input type="submit" class="btn btn-success" value="Actualizar">
             </div>
         </div>
     </form>
@@ -38,7 +38,7 @@
 	<tr>
 			<td><?php echo $dato[$i]['codpar']?></td>
 		    <td><?php echo $dato[$i]['nompar']?></td>
-            <td><a href="home.php?id=<?php echo $dato[$i]['codpar'] ?>&var=25" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codpar'] ?>&var=25" class="btn btn-success">Editar</a></td>
         </tr>
 		
 	

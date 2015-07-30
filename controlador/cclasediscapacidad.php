@@ -7,7 +7,7 @@
 	$tipdis 	= isset($_POST["tipodis"]) ? $_POST["tipodis"]:NULL;
 	$numdoc		= isset($_POST["numdoc"]) ? $_POST["numdoc"]:NULL;
 	$actu 		= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr 		= isset($_GET["id"]) ? $_GET["id"]:NULL;
+	$id 		= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	//$dato = $ins->selcladis();
 	$dato1 = $ins->selcladis1($id);

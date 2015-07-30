@@ -10,8 +10,8 @@
                 <input name="nomserv" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Insertar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Insertar">
+                <a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -32,7 +32,7 @@
         <tr>
 			<td><?php echo $dato[$i]['codservbas']?></td>
 		    <td><?php echo $dato[$i]['desservbas']?></td>
-            <td><a href="home.php?id=<?php echo $dato[$i]['codservbas'] ?>&var=21" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codservbas'] ?>&var=21" class="btn btn-success">Editar</a></td>
         </tr>
         <?php  }  ?>
     </table>

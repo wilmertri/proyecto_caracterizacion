@@ -49,8 +49,8 @@
             	<input type="text" name="desc" class="form-control">
             </div>
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Insertar discapacidad">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Insertar discapacidad">
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
     </form>
@@ -72,7 +72,7 @@
 			<tr>
 				<td><?php echo $datos[$i]['nomclasedis'] ?></td>
 				<td><?php echo $datos[$i]['descripcion']?></td>
-				<td><a href="home.php?id=<?php echo $datos[$i]['iddiscperfam'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $datos[$i]['iddiscperfam'] ?>&var=35" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  
 				}
@@ -87,7 +87,7 @@
 			<tr>
 				<td><?php echo $dato[$i]['nomclasedis'] ?></td>
 				<td><?php echo $dato[$i]['descripcion']?></td>
-				<td><a href="home.php?id=<?php echo $dato[$i]['iddiscper'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $dato[$i]['iddiscper'] ?>&var=35" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  
 				} 

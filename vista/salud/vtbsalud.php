@@ -133,10 +133,11 @@
 				</select>
             </div>
         </div>
-		<div class="row">
-			<div class="form-group col-lg-6">
-				<input type="submit" class="btn btn-primary" value="Insertar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+        <div class="row">
+			<div class="form-group col-md-12 center" >
+				<input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php?id=<?= $a_id ?>&var=70" class="btn btn-success">Volver</a>
+				<a href="home.php" class="btn btn-success" >Salir</a>
 			</div>
 		</div>
 	</form>

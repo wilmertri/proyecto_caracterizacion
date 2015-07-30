@@ -20,8 +20,8 @@
                  <input name="deszona" type="text" value = "<?php echo $dato1[0]['deszona'] ?>"  class="form-control">
             </div>
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Actualizar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Actualizar">
+                <a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -46,7 +46,7 @@
 			<td><?php echo $dato[$i]['codzona']?></td>
 		    <td><?php echo $dato[$i]['nomzona']?></td>
             <td><?php echo $dato[$i]['deszona'] ?></td>
-            <td><a href="home.php?id=<?php echo $dato[$i]['codzona'] ?>&var=27" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codzona'] ?>&var=27" class="btn btn-success">Editar</a></td>
         </tr>
 		
 	

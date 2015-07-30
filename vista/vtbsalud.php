@@ -137,8 +137,8 @@
         </div>
 		<div class="row">
 			<div class="form-group col-lg-6">
-				<input type="submit" class="btn btn-primary" value="Insertar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+				<input type="submit" class="btn btn-success" value="Insertar">
+				<a href="home.php" class="btn btn-success" >Salir</a>
 			</div>
 		</div>
 	</form>

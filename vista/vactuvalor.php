@@ -19,7 +19,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6">
-				<input type="submit" value="Actualizar" class="btn btn-primary">
+				<input type="submit" value="Actualizar" class="btn btn-success">
 			</div>
 		</div>
 	</form>

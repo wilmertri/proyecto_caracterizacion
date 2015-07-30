@@ -14,8 +14,8 @@
                 <input name="desubver" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Insertar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Insertar">
+                <a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -40,7 +40,7 @@
 			<td><?php echo $dato[$i]['codver']?></td>
 		    <td><?php echo $dato[$i]['nomver']?></td>
             <td><?php echo $dato[$i]['desubver'] ?></td>
-            <td><a href="home.php?id=<?php echo $dato[$i]['codver'] ?>&var=25" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codver'] ?>&var=25" class="btn btn-success">Editar</a></td>
         </tr>
 		
 	<?php } ?>		

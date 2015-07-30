@@ -22,8 +22,8 @@
 		</div>
 		<div class="row">
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary" value="Actualizar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+				<input type="submit" class="btn btn-success" value="Actualizar">
+				<a href="home.php" class="btn btn-success" >Salir</a>
 			</div>
 		</div>
 	</form>	
@@ -45,7 +45,7 @@
 				<td align = "left"><?php echo $dato[$i]["codfac"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["nomfactor"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desfactor"]; ?></td>
-				<td align = "center"><a href ="home.php?id=<?php echo $dato[$i]['codfac'] ?>&var=31" class="btn btn-primary">Editar</a></td>
+				<td align = "center"><a href ="home.php?id=<?php echo $dato[$i]['codfac'] ?>&var=31" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php } ?>
 		</table>

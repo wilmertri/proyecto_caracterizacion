@@ -22,8 +22,9 @@
 				</select>
 			</div>
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Insertar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php?var=56&id=<?= $id ?>" class="btn btn-success">Volver</a>
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
     </form>
@@ -46,7 +47,7 @@
 				<td><?php echo $dato[$i]['idclase']?></td>
 				<td><?php echo $dato[$i]['idtipodis'] ?></td>
 				<td><?php echo $dato[$i]['nomclasedis']?></td>
-				<td><a href="home.php?id=<?php echo $dato[$i]['idclase'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $dato[$i]['idclase'] ?>&var=35" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  }  ?>
 		</table>
