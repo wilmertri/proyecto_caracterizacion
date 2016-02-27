@@ -86,6 +86,10 @@ div.show-top-margin {
   margin: 0 auto;
 }
 
+.mayus{
+  text-transform: uppercase;
+}
+
 #pie{
 
   margin: 40px auto;

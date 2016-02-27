@@ -40,7 +40,7 @@
 	<div class="dropdown esp">
 		<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown">DESPOJO Y ABANDONO DE TIERRAS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="home.php?var=&id=<?= $id;?>">MOSTRAR DATOS</a></li>
+			<li><a href="home.php?var=96&id=<?= $id;?>">MOSTRAR DATOS</a></li>
 			<li><a href="home.php?var=95&id=<?= $id;?>">INGRESAR DATOS</a></li>
 		</ul>
 	</div>

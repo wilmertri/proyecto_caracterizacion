@@ -240,7 +240,8 @@
           if ($variable==75) {
               include("vista/datosvivienda/vdatosvivienda.php");
           }
-          if ($variable==76) {
+          if ($variable==76) 
+          {
               include("vista/datosvivienda/vverdatosvivienda.php");
           }
           if ($variable==90) {
@@ -260,6 +261,11 @@
   		    {
               //Andrea
   			      include("vista/despojoyabandono/vdespyaban.php");
+          }
+          if ($variable==96) 
+          {
+              //Diego
+              include("vista/despojoyabandono/vverdespyaban.php");
           }
           if ($variable==100) 
           {

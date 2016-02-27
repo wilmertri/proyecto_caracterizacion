@@ -77,9 +77,10 @@
 
 		public function consulta_datos_despyaban($id)
 		{
-			$sql = "SELECT idpersona, lugexpulper, fecexpulper, tiepermun, actperact, solrupruv, razrupruv, usopreddes, perbienper, tipbienper, relbienper, iderupruv, raznoret, medprotper, recprotper, indunivict, obsdesper, ingresoalimentos, lugarrehubi FROM tbdatospersona WHERE idpersona= '$id';";
+			$sql = "SELECT idpersona, lugexpulper, fecexpulper, tiepermun, actperact, solrupruv, razrupruv, usopreddes, perbienper, tipbienper, relbienper, iderupruv, raznoret, medprotper, recprotper, indunivict, obsdesper, ingresoalimentos, lugarrehubi, tipfamper FROM tbdatospersona WHERE idpersona= '$id';";
 			return $this->SeleccionDatos($sql);
 		}
+
 	
 		
 	}

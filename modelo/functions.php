@@ -34,6 +34,20 @@
             *	Función para calcular la edad según la fecha de nacimiento
             */
 
+            function getUbicacion($codubi)
+            {
+                    $sql = "SELECT * FROM tbubicacion WHERE codubi = $codubi";
+                    $ville = $this->SeleccionDatos($sql);
+                    $depubi = $ville[0]['depubi'];
+                    $sql = "SELECT * FROM tbubicacion WHERE codubi = $depubi";
+                    $departamento = $this->SeleccionDatos($sql);
+                    return $ubicacion = array('ciudad' => $ville[0]['nomubi'], 'departamento' => $departamento[0]['nomubi']);
+            }
+
+            /*
+            *   Función para la ubicacion
+            */
+
             function calcular_edad($fecha)
             {
                     $dias = explode("-", $fecha, 3);
@@ -41,6 +55,8 @@
                     $edad = (int)((time()-$dias)/31556926 );
                     return $edad;
             }
+
+
 
             /*
              * Función de utilidad para las sentencias SQL de inserción (INSERT), actualización (UPDATE) y eliminación (DELETE) 

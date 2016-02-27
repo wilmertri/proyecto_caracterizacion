@@ -7,9 +7,9 @@
         <div class="row">
             <div class="form-group">
                 <label for="Codigo">Codigo</label>
-                <input name="coding" class="form-control" value="<?php echo $dato2[0]['coding'] ?>" disabled>
+                <input name="coding" class="form-control" value="<?= $dato2[0]['coding'] ?>" disabled>
                 <input type="hidden" name="actu" value="actu" />
-				<input type="hidden" name="coding" value="<?php echo $dato2[0]['coding'] ?>" />
+				<input type="hidden" name="coding" value="<?= $dato2[0]['coding'] ?>" />
             </div>
 			<div class="form-group">
                 <label for="Tipo ingreso">Tipo ingreso</label>
@@ -18,7 +18,7 @@
 					<?php 
 						for ($i=0; $i < count($tipoing1); $i++){
 					?>
-					<option value ="<?php echo $tipoing1[$i]['codval'] ?>" ><?php echo $tipoing1[$i]['nomval'] ?></option>
+					<option value ="<?= $tipoing1[$i]['codval'] ?>" ><?= $tipoing1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
@@ -27,11 +27,11 @@
 			
 			<div class="form-group">
                 <label for="ingreso">ingreso</label>
-                <input name="ing" type="text" value="<?php echo $dato2[0]['ing'] ?>" class="form-control">
+                <input name="ing" type="text" value="<?= $dato2[0]['ing'] ?>" class="form-control">
             </div>
 			<div class="form-group">
                 <input type="submit" class="btn btn-success" value="Actualizar">
-				<a href="home.php?var=91&id=<?php echo $id ?>" class="btn btn-success">Volver</a>
+				<a href="home.php?var=91&id=<?= $id ?>" class="btn btn-success">Volver</a>
 				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>

@@ -115,28 +115,19 @@
 			<br>
 			<br>
 			<br>
-                <label for="Tiempo de permanencia">Tiempo permanencia en el municipio <span style="color:red;">*</span></label>
+                <label for="Tiempo de permanencia">Tiempo permanencia en el municipio (Años) <span style="color:red;">*</span></label>
                 <input name="tieper" type="text" class="form-control" pattern="[0-9]{1,2}" placeholder="">
             </div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6 col-md-6">
 			<label for="Ideal RUPD">Para todos los miembros del hogar incluidos en el RUPD/RUV Su ideal es?</label>
-					<select name="ideal" onchange="javascript:mostrar(this.value);" class="form-control">
-								<option value=0> Seleccione una opción </option>>
-								
-						   
-								<?php 
-								//Select
-								//$gen = $ins->selpar();
-								for ($i=0; $i < count($ideal_rupd); $i++){
-								?>
-						
-								<option value="<?php echo $ideal_rupd[$i]['codval'] ?>" ><?php echo $ideal_rupd[$i]['nomval'] ?></option>
-						
-								<?php } ?>
-					</select>
-			
+				<select name="ideal" onchange="javascript:mostrar(this.value);" class="form-control">
+					<option value=0> Seleccione una opción </option>>
+					<?php for ($i=0; $i < count($ideal_rupd); $i++): ?>
+						<option value="<?= $ideal_rupd[$i]['codval'] ?>" ><?php echo $ideal_rupd[$i]['nomval'] ?></option>
+					<?php endfor; ?>
+				</select>
             </div>
 			<div class="form-group col-lg-6 col-md-6">
 				<label for="Solicitud RUPD/RUV">Quien solicito la inclucion en el RUPD/RUV:</label>
@@ -160,21 +151,21 @@
 			<div class="form-group col-lg-6 col-md-6">
 			<br>
 			<br>
-					<label for="Razon inclusion RUPD/RUV">¿… fue incluido en el RUPD / RUV por:</label>
-					<select name="razoninclusion" onchange="javascript:mostrar(this.value);" class="form-control">
-							<option value=0> Seleccione una opción </option>>
-							
-					   
-							<?php 
-							//Select
-							//$gen = $ins->selpar();
-							for ($i=0; $i < count($razon_inclusion); $i++){
-							?>
+			<label for="Razon inclusion RUPD/RUV">¿… fue incluido en el RUPD / RUV por:</label>
+			<select name="razoninclusion" onchange="javascript:mostrar(this.value);" class="form-control">
+					<option value=0> Seleccione una opción </option>>
 					
-							<option value="<?php echo $razon_inclusion[$i]['codval'] ?>" ><?php echo $razon_inclusion[$i]['nomval'] ?></option>
-					
-							<?php } ?>
-					</select>
+			   
+					<?php 
+					//Select
+					//$gen = $ins->selpar();
+					for ($i=0; $i < count($razon_inclusion); $i++){
+					?>
+			
+					<option value="<?php echo $razon_inclusion[$i]['codval'] ?>" ><?php echo $razon_inclusion[$i]['nomval'] ?></option>
+			
+					<?php } ?>
+			</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
 				<label for="Uso predio despues del despojo">Usted o algún miembro del hogar tenía un predio que debido a la violencia causada por un grupo armado tuvo que:</label>
@@ -300,7 +291,7 @@
 							for ($i=0; $i < count($razon_retorno); $i++){
 							?>
 						
-							<option value="<?php echo $razon_retorno[$i]['codval'] ?>" ><?php echo $razon_retorno[$i]['nomval'] ?></option>
+							<option value="<?= $razon_retorno[$i]['codval'] ?>" ><?= $razon_retorno[$i]['nomval'] ?></option>
 						
 							<?php } ?>
 				</select>
@@ -362,9 +353,9 @@
 			</div>
 		</div>
 		<div class="row">	
-			<div class="form-group col-lg-6 col-md-6 center">
-				<label for="Observaciones">Observaciones</label>
-				<input name="observaciones" type="text" class="form-control">
+			<div class="form-group col-lg-12 col-md-6 center">
+				<label for="Observaciones">Observaciones</label><br>
+				<textarea name="observaciones" id="" cols="80" rows="5" placeholder="Observaciones" class="mayus"></textarea>
             </div>
         </div>    
 		<div  class="row">

@@ -21,12 +21,14 @@
 	$reciproteccion	= isset($_POST["recibiomedidasdeproteccion"]) ? $_POST["recibiomedidasdeproteccion"]:NULL;
 	$indemnizacion 	= isset($_POST["harecibidoindemnizacion"]) ? $_POST["harecibidoindemnizacion"]:NULL;
 	$observacion 	= isset($_POST["observaciones"]) ? $_POST["observaciones"]:NULL;
+	$observacion    = strtoupper($observacion);
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	$dato1 = $ins->consulta_datos_despyaban($id);
 
-	var_dump($dato1);
+	//var_dump($observacion);
+	//Datos para seleccionar
 	
 	$respuesta_cerrada		= $ins -> get_respuesta_cerrada();
 	$respuesta_cerrada_dos	= $ins -> get_respuesta_cerrada_dos();
@@ -38,29 +40,28 @@
 	$tipo_de_familia		= $ins -> get_tipo_de_familia();
 	$ideal_rupd				= $ins -> get_ideal_rupd();
 	$razon_retorno			= $ins -> get_razon_retorno();
-    /*
-    echo	$municipio		;	
-	echo 	$fechexpul 		;
-	echo 	$actorarmado	;
-	echo	$ingaliment 	;
-	echo	$tpermanencia	;
-	echo	$solicitud 		;
-	echo	$rinclusion 	;
-	echo	$usopredio 		;
-	echo	$perbienes 		;
-	echo	$tipobi 		;
-	echo	$relabien	 	;
-	echo	$tipofam 		;
-	echo	$ideal 			;
-	echo	$ubicacion	 	;
-	echo	$retorno 		;
-	echo	$medproteccion 	;
-	echo	$reciproteccion	;
-	echo	$indemnizacion 	;
-	echo 	$observacion 	;
-	*/
+
+
+
+	
 	if ($id) {
 		
+		// 1
+		if ($municipio == 0) 
+		{
+			$municipio = $dato1[0]['lugexpulper'];
+		}
+
+		if ($fechexpul == 0) 
+		{
+			$fechexpul = $dato1[0]['fecexpulper'];
+		}
+
+		if ($tpermanencia == "") 
+		{
+			$tpermanencia = $dato1[0]['tiepermun'];
+		}
+
 		if ($actorarmado == 0) 
 		{
 			$actorarmado = $dato1[0]['actperact'];
@@ -83,9 +84,14 @@
 
 		if ($usopredio == 0) 
 		{
-			$usopredio = $dato1[0]['usopreddes'];
+			$usopredio = $dato1[0]['usopreddes']; //Uso del predio despues del despojo
 		}
-		
+
+		if ($perbienes == 0) 
+		{
+			$perbienes = $dato1[0]['perbienper']; //Uso del predio despues del despojo
+		}
+				
 		if ($tipobi == 0) 
 		{
 			$tipobi = $dato1[0]['tipbienper'];
@@ -115,15 +121,54 @@
 		{
 			$medproteccion = $dato1[0]['medprotper'];
 		}
+
 		if ($reciproteccion == 0) 
 		{
 			$reciproteccion = $dato1[0]['recprotper'];
 		}
-		if ($indemnizacion = 0) 
+
+		if ($ubicacion == 0) 
+		{
+			$ubicacion = $dato1[0]['lugarrehubi'];
+		}
+
+		if ($indemnizacion == 0) 
 		{
 			$indemnizacion = $dato1[0]['indunivict'];
 		}
+
+		if ($observacion == "") 
+		{
+			$observacion = $dato1[0]['obsdesper'];
+		}
+		else
+		{
+			$observacion = $dato1[0]['obsdesper'] . " - " . $observacion;
+		}
 	}
+
+	    echo	$municipio		.'<br />';	
+	    echo 	$fechexpul 		.'<br />';
+	/*
+	
+	echo 	$actorarmado	.'<br />';
+	echo	$ingaliment 	.'<br />';
+	echo	$tpermanencia	.'<br />';
+	echo	$solicitud 		.'<br />';
+	echo	$rinclusion 	.'<br />';
+	echo	$usopredio 		.'<br />';
+	echo	$perbienes 		.'<br />';
+	echo	$tipobi 		.'<br />';
+	echo	$relabien	 	.'<br />';
+	echo	$tipofam 		.'<br />';
+	echo	$ideal 			.'<br />';
+	echo	$ubicacion	 	.'<br />';
+	echo	$retorno 		.'<br />';
+	echo	$medproteccion 	.'<br />';
+	echo	$reciproteccion	.'<br />';
+	echo	$indemnizacion 	.'<br />';
+	*/
+	echo 	$observacion 	.'<br />';
 	
 	if($municipio)
 	{
