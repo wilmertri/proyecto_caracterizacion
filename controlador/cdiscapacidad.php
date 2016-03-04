@@ -8,12 +8,11 @@
 	$id =  isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	
-	$dato1 = $ins -> seldisper($id);
-    //$tipo = $ins->valor(12);
-	//$clase = $ins->valor(13);
+	$dato_type_disc = $ins -> seldisper1($id);
 	
 	// Actualizar datos
-	if($idtipodis && $tipodis && $actu) {
+	if($idtipodis && $tipodis && $actu) 
+	{
 		$ins -> upddisper($idtipodis ,$tipodis);
 	}
 	// Insertar datos

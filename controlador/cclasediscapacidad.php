@@ -11,14 +11,33 @@
 
 	//$dato = $ins->selcladis();
 	$dato1 = $ins->selcladis1($id);
+
 	$tipodis = $ins->seltipdis();
+
+	function name_class_disc($tipodis, $idtipodis)
+	{
+
+		$name_tipe = "";
+
+		for ($i=0; $i < count($tipodis); $i++) 
+		{ 
+			if ($tipodis[$i]['idtipodis'] == $idtipodis) 
+			{
+				$name_tipe = $tipodis[$i]['nomtipodis'];
+			}
+		}
+
+		return $name_tipe;
+
+	}
 
 	//$tipo = $ins->valor(12);
 	//$clase = $ins->valor(13);
 	
 	// Actualizar datos
-	if($idclase && $nomcladis && $actu) {
-		$ins -> updcladis($idclase ,$nomcladis);
+	if($idclase && $nomcladis && $tipdis && $actu) 
+	{
+		$ins->updcladis($idclase ,$nomcladis, $tipdis);
 	}
 	// Insertar datos
 	if($nomcladis && $tipdis && !$actu) {

@@ -7,19 +7,21 @@
 	$numdoc		= isset($_POST["numdoc"]) ? $_POST["numdoc"]:NULL;
 	$desc		= isset($_POST["desc"]) ? $_POST["desc"]:NULL;
 	$actu 		= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
+	$idd 		= isset($_GET["idd"]) ? $_GET["idd"]:NULL;
 	$id 		= isset($_GET["id"]) ? $_GET["id"]:NULL;
 	$datfam		= isset($_GET["famper"]) ? $_GET["famper"]:NULL;
 
 	//$dato = $ins->selcladis();
 	//$dato1 = $ins->selcladis1($id);
-	$dato1 = $ins->seldisper2($id);
+	$dato1 = $ins->seldisper1($idd);
 	$tipodis = $ins->seltipdis();
 
 	//$tipo = $ins->valor(12);
 	//$clase = $ins->valor(13);
 	
 	// Actualizar datos
-	if($iddisc && $disc && $numdoc && $desc && $actu) {
+	if($iddisc && $disc && $numdoc && $desc && $actu) 
+	{
 		$ins -> upddisper($iddisc,$disc,$numdoc,$desc);
 	}
 	// Insertar datos discapacidad persona

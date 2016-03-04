@@ -1,7 +1,7 @@
 <?php
 	include ("controlador/cclasediscapacidad.php");
 ?>
-<h1>Crear discapacidad</h1>
+<h1>Agregar Clase de Discapacidad</h1>
 <div class="forms">
 	<form name="form1" action="" method="post">
 		<div class="row">
@@ -12,10 +12,11 @@
 			<div class="form-group">
 				<label for="Clase de discapacidad">Tipo de Discapacidad</label>
                 <select name="tipodis" type="text" class="form-control">
+                	<option value="">Seleccione el tipo de discapacidad</option>
 				<?php 
 					for ($i=0; $i<count($tipodis); $i++){
 				?>
-				<option value ="<?php echo $tipodis[$i]['idtipodis']; ?>" ><?php echo $tipodis[$i]['nomtipodis'] ?></option>
+				<option value ="<?= $tipodis[$i]['idtipodis']; ?>" ><?= $tipodis[$i]['nomtipodis'] ?></option>
 				<?php 
 					} 
 				?>
@@ -23,7 +24,6 @@
 			</div>
 			<div class="form-group">
                 <input type="submit" class="btn btn-success" value="Enviar">
-				<a href="home.php?var=56&id=<?= $id ?>" class="btn btn-success">Volver</a>
 				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
@@ -44,10 +44,10 @@
 				for ($i=0; $i < count($dato); $i++){
 			?>
 			<tr>
-				<td><?php echo $dato[$i]['idclase']?></td>
-				<td><?php echo $dato[$i]['idtipodis'] ?></td>
-				<td><?php echo $dato[$i]['nomclasedis']?></td>
-				<td><a href="home.php?id=<?php echo $dato[$i]['idclase'] ?>&var=35" class="btn btn-success">Editar</a></td>
+				<td><?= $dato[$i]['id']?></td>
+				<td><?= name_class_disc($tipodis, $dato[$i]['tipe_dis']) ?></td>
+				<td><?= $dato[$i]['name'] ?></td>
+				<td><a href="home.php?id=<?= $dato[$i]['id'] ?>&var=35" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  }  ?>
 		</table>

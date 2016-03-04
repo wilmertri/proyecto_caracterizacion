@@ -13,11 +13,18 @@ if($_REQUEST["valor"]==0){
 	$estados = $conexionBD->ejecutarConsulta($sql2,0);
 	$result=array();
 	$i=0;
-	foreach($estados as $estado)
+	if ($estados) 
 	{
-		$result[$i]["value"]=$estado["codclase"];
-		$result[$i]["nombre"]=$estado["nomclase"];
-		$i++;
+		foreach($estados as $estado)
+		{
+			$result[$i]["value"]=$estado["codclase"];
+			$result[$i]["nombre"]=$estado["nomclase"];
+			$i++;
+		}
+	}
+	else
+	{
+		$result = [];
 	}
 		   
 	$html='<select name="clasdis" id="id_estado" class="form-control">';

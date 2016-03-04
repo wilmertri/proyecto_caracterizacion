@@ -146,29 +146,6 @@
 			$observacion = $dato1[0]['obsdesper'] . " - " . $observacion;
 		}
 	}
-
-	    echo	$municipio		.'<br />';	
-	    echo 	$fechexpul 		.'<br />';
-	/*
-	
-	echo 	$actorarmado	.'<br />';
-	echo	$ingaliment 	.'<br />';
-	echo	$tpermanencia	.'<br />';
-	echo	$solicitud 		.'<br />';
-	echo	$rinclusion 	.'<br />';
-	echo	$usopredio 		.'<br />';
-	echo	$perbienes 		.'<br />';
-	echo	$tipobi 		.'<br />';
-	echo	$relabien	 	.'<br />';
-	echo	$tipofam 		.'<br />';
-	echo	$ideal 			.'<br />';
-	echo	$ubicacion	 	.'<br />';
-	echo	$retorno 		.'<br />';
-	echo	$medproteccion 	.'<br />';
-	echo	$reciproteccion	.'<br />';
-	echo	$indemnizacion 	.'<br />';
-	*/
-	echo 	$observacion 	.'<br />';
 	
 	if($municipio)
 	{

@@ -19,13 +19,14 @@
         });
      }
 </script>
-<h1>Crear discapacidad</h1>
+<h1>Agregar Discapacidad de la Persona</h1>
 <div class="forms">
 	<form name="form1" action="" method="post">
 		<div class="row">
 			<div class="form-group">
 				<label for="Clase de discapacidad">Tipo de Discapacidad</label>
                 <select name="tipodis" onchange="javascript:RecargarClases(this.value);" class="form-control">
+					<option value="0">Seleccione tipo de discapacidad</option>
 					<?php 
 						for ($i=0; $i<count($tipodis); $i++){
 					?>
@@ -70,9 +71,9 @@
 				for ($i=0; $i < count($datos); $i++){
 			?>
 			<tr>
-				<td><?php echo $datos[$i]['nomclasedis'] ?></td>
-				<td><?php echo $datos[$i]['descripcion']?></td>
-				<td><a href="home.php?id=<?php echo $datos[$i]['iddiscperfam'] ?>&var=35" class="btn btn-success">Editar</a></td>
+				<td><?= $datos[$i]['nomclasedis'] ?></td>
+				<td><?= $datos[$i]['descripcion']?></td>
+				<td><a href="home.php?id=<?= $datos[$i]['iddiscperfam'] ?>&var=37" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  
 				}
@@ -85,9 +86,9 @@
 				{
 			?>
 			<tr>
-				<td><?php echo $dato[$i]['nomclasedis'] ?></td>
-				<td><?php echo $dato[$i]['descripcion']?></td>
-				<td><a href="home.php?id=<?php echo $dato[$i]['iddiscper'] ?>&var=35" class="btn btn-success">Editar</a></td>
+				<td><?= $dato[$i]['nomclasedis'] ?></td>
+				<td><?= $dato[$i]['descripcion']?></td>
+				<td><a href="home.php?idd=<?= $dato[$i]['iddiscper'] ?>&id=<?= $id; ?>&var=37" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php  
 				} 

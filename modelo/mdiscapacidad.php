@@ -2,16 +2,18 @@
 	include("controlador/conexion.php");
 	class mdiscapacidad {
 		
-		function mdiscapacidad() {}
-		function insdisper($tipodis) {
+		function insdisper($tipodis) 
+		{
 			$sql = "INSERT INTO tbtipodiscapacidad (nomtipodis) VALUES ('".$tipodis."');";
 			$this -> cons($sql);
 		}
-		function upddisper($idtipodis, $tipdis) {
+		function upddisper($idtipodis, $tipodis) 
+		{
 			$sql = "UPDATE tbtipodiscapacidad SET nomtipodis = '".$tipodis."' WHERE idtipodis = '".$idtipodis."';";
 			$this -> cons($sql);
 		}
-		function deldisper($idtipodis) {
+		function deldisper($idtipodis) 
+		{
 			$sql = "DELETE FROM tbtipodiscapacidad WHERE idtipodis = '".$idtipodis."';";
 			$this -> cons($sql);
 		}

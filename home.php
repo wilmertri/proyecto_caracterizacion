@@ -92,205 +92,233 @@
     ?>             
     <div class="plantilla1">    
       <?php
-          if ($variable==2) {
+          if ($variable==2) 
+          {
               include("vista/datospersona/vdatospersona.php");
           }
-          if ($variable==3) {
+          elseif ($variable==3) 
+          {
               include("vista/vlistadatosper.php");
           }
-          if ($variable==4) {
+          elseif ($variable==4) 
+          {
               include("vista/datospersona/vdetalleper.php");
           }
-          if ($variable==5) {
+          elseif ($variable==5) 
+          {
               include("vista/datospersona/veditarper.php");
           }
-          if ($variable==6) {
+          elseif ($variable==6) 
+          {
               include("vista/composicionfamiliar/vdatosfam.php");
           }
-          if ($variable==7) {
+          elseif ($variable==7) 
+          {
               include("vista/composicionfamiliar/vdatosfam1.php");
           }
-          if ($variable==8) {
+          elseif ($variable==8) 
+          {
               include("vista/composicionfamiliar/vdetallefamper.php");
           }
-          if ($variable==9) {
-              include("vista/veditarfamper.php");
-          }
-          if ($variable==10) {
+          elseif ($variable==10) 
+          {
               include("vista/educacion/vtbcapacitacion.php");
           }
-          if ($variable==11) {
+          elseif ($variable==11) 
+          {
               include("vista/educacion/vtbcapacitacion1.php");
           }
-          if ($variable==12) {
+          elseif ($variable==12) 
+          {
               include("vista/vtbeps.php");
           }
-          if ($variable==13) {
+          elseif ($variable==13) 
+          {
               include("vista/vtbeps1.php");
           }
-          if ($variable==14) {
+          elseif ($variable==14) 
+          {
               include("vista/actividadeconomica/vexplaboral.php");
           }
-          if ($variable==15) {
+          elseif ($variable==15) 
+          {
               include("vista/actividadeconomica/vexplaboral1.php");
           }
-          if ($variable==16) {
+          elseif ($variable==16) 
+          {
               include("vista/actividadeconomica/vingresoext.php");
           }
-          if ($variable==17) {
+          elseif ($variable==17) 
+          {
               include("vista/actividadeconomica/vingresoext1.php");
           }
-          if ($variable==18) {
+          elseif ($variable==18) 
+          {
               include("vista/actividadeconomica/vtbnegocio.php");
           }
-          if ($variable==19) {
+          elseif ($variable==19) 
+          {
               include("vista/actividadeconomica/vtbnegocio1.php");
           }
-          if ($variable==20) {
+          elseif ($variable==20) 
+          {
               include("vista/vservibas.php");
           }
-		      if ($variable==21) {
+		      elseif ($variable==21) 
+          {
               include("vista/vservibas1.php");
           }
-          if ($variable==22) {
+          elseif ($variable==22) 
+          {
               include("vista/actividadeconomica/vtipoingreso.php");
           }
-          if ($variable==23) {
+          elseif ($variable==23) 
+          {
               include("vista/actividadeconomica/vtipoingreso1.php");
           }
-          if ($variable==24) {
+          elseif ($variable==24) 
+          {
               include("vista/vtbvereda.php");
           }
-		      if ($variable==25) {
+		      elseif ($variable==25) 
+          {
               include("vista/vtbvereda1.php");
           }
-          if ($variable==26) {
+          elseif ($variable==26) 
+          {
               include("vista/vtbzona.php");
           }
-          if ($variable==27) {
+          elseif ($variable==27) 
+          {
               include("vista/vtbzona1.php");
           }
-		      if ($variable==28) {
-              include("vista/vtbhechosvict.php");
-          }
-		      if ($variable==29) {
-              include("vista/vtbhechosvict1.php");
-          }
-          if ($variable==30) 
+          elseif ($variable==30) 
           {
               include("vista/despojoyabandono/vfactoresperm.php");
           }
-          if ($variable==31) 
+          elseif ($variable==31) 
           {
               include("vista/despojoyabandono/vfactxidper.php");
           }
-          if ($variable==32) {
-              include("vista/vdiscapacidad.php");
+          elseif ($variable==32) 
+          {
+              include("vista/salud/discapacidad/vcreate_type_discapacidad.php");
           }
-          if ($variable==33) {
-              include("vista/vdiscapacidad1.php");
+          elseif ($variable==33) 
+          {
+              include("vista/salud/discapacidad/vedit_type_discapacidad.php");
           }
-          if ($variable==34) {
-              include("vista/vclasediscapacidad.php");
+          elseif ($variable==34) 
+          {
+              include("vista/salud/discapacidad/vcreate_class_discapacidad.php");
           }
-          if ($variable==35) {
-              include("vista/vclasediscapacidad1.php");
+          elseif ($variable==35) 
+          {
+              include("vista/salud/discapacidad/vedit_class_discapacidad.php");
           }
-          if ($variable==36) {
-              include("vista/vdiscper.php");
+          elseif ($variable==36) 
+          {
+              include("vista/salud/discapacidad/vcreate_disc_per.php");
           }
-		      if ($variable==40) {
+          elseif ($variable==37) 
+          {
+              include("vista/salud/discapacidad/vedit_disc_per.php");
+          }
+		      elseif ($variable==40) 
+          {
               include("vista/vparametro.php");
           }
-		      if ($variable==41) {
+		      elseif ($variable==41) 
+          {
               include("vista/vparametro1.php");
           }
-          if ($variable==42) {
+          elseif ($variable==42) 
+          {
               include("vista/vactuvalor.php");   
           }
-          if ($variable==43) {
+          elseif ($variable==43) 
+          {
               include("vista/vvalor.php");   
           }
-          if ($variable==50) {
+          elseif ($variable==50) 
+          {
               include("vista/usuario/vusuario.php");
           }
-          if ($variable==51) {
+          elseif ($variable==51) 
+          {
               include("vista/usuario/vediusuario.php");
           }
-          if ($variable==55) {
+          elseif ($variable==55) 
+          {
               include("vista/salud/vtbsalud.php");
           }
-          if ($variable==56) {
+          elseif ($variable==56) 
+          {
               include("vista/salud/vconsultatbsalud.php");
           }
-          if ($variable==57) {
-              include("vista/salud/vactualizatbsalud.php");
-          }
-
-          if ($variable==58) {
-              include("vista/vconsultaRehabi.php");
-          }
-          
-          if ($variable==59) {
-              include("vista/vactualizaRehabi.php");
-          }
-          if ($variable==70) {
+          elseif ($variable==70) 
+          {
               include("vista/vmenudatosper.php");
           }
-          if ($variable==75) {
+          elseif ($variable==75) 
+          {
               include("vista/datosvivienda/vdatosvivienda.php");
           }
-          if ($variable==76) 
+          elseif ($variable==76) 
           {
-              include("vista/datosvivienda/vverdatosvivienda.php");
+             include("vista/datosvivienda/vverdatosvivienda.php");
           }
-          if ($variable==90) {
-              //Jorge
-			        include("vista/actividadeconomica/vactividadeconomica.php");
+          elseif ($variable==90) 
+          {
+              include("vista/actividadeconomica/vactividadeconomica.php");
           }
-		      if ($variable==91) {
+		      elseif ($variable==91) 
+          {
 			        include("vista/actividadeconomica/vdatosactividadeconomica.php");
           }
-		      if ($variable==92) {
+		      elseif ($variable==92) 
+          {
 			        include("vista/actividadeconomica/vingreso.php");
           }
-		      if ($variable==93) {
+		      elseif ($variable==93) 
+          {
 			        include("vista/actividadeconomica/vingreso1.php");
           }
-          if ($variable==95) 
+          elseif ($variable==95) 
   		    {
-              //Andrea
   			      include("vista/despojoyabandono/vdespyaban.php");
           }
-          if ($variable==96) 
+          elseif ($variable==96) 
           {
-              //Diego
               include("vista/despojoyabandono/vverdespyaban.php");
           }
-          if ($variable==100) 
+          elseif ($variable==100) 
           {
-              //Jhon Edison
-			    include("vista/educacion/veducacion.php");
+              include("vista/educacion/veducacion.php");
           }
-				if ($variable==101) 
+				  elseif ($variable==101) 
           {
-				include("vista/educacion/vdatoseducacion.php");
+				      include("vista/educacion/vdatoseducacion.php");
           }
-				if ($variable==104) 
+				  elseif ($variable==104) 
           {
-				include("vista/educacion/vprofesion.php");
+				      include("vista/educacion/vprofesion.php");
           }
-				if ($variable==105) 
+				  elseif ($variable==105) 
           {
-				include("vista/educacion/vprofesion1.php");
+				      include("vista/educacion/vprofesion1.php");
           }
-				if ($variable==106) 
+		      elseif ($variable==106) 
           {
-				include("vista/educacion/vtbopcionnomatricula.php");
+				      include("vista/educacion/vtbopcionnomatricula.php");
           }
-				if ($variable==107) 
+				  elseif ($variable==107) 
           {
-				include("vista/educacion/vtbopcionnomatricula1.php");
+				      include("vista/educacion/vtbopcionnomatricula1.php");
+          }
+          else
+          {
+              echo "<h1>Página no encontrada</h1>";
           }
       ?>  
     </div>                                                
