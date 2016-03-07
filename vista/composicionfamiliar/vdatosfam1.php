@@ -17,17 +17,14 @@
 			};
 </script>
 <h2>Editar datos del familiar</h2>
-<?php
-	$datoact = $ins	->selper1($id);
-?>
 <div class="forms1">
-	<form name="form1" action="home.php?var=8&id=<?php echo $datoact[0]['numdocfam'] ?>" method="post">
+	<form name="form1" action="" method="post">
 		<div class="row">
 			<div class="form-group col-md-6">
 				<label for="Documento">Documento</label>
-                <input name="documento" type="text" class="form-control" value="<?php echo $datoact[0]['numdocfam'] ?>" disabled>
+                <input name="documento" type="text" class="form-control" value="<?= $datoact[0]['numdocfam'] ?>">
                 <input type="hidden" name="actu" value="actu" />
-                <input type="hidden" name="documento" value="<?php echo $datoact[0]['numdocfam'] ?>">
+                <input type="hidden" name="idfamper" value="<?= $datoact[0]['idfamiliaper'] ?>">
             </div>
 			<div class="form-group col-md-6">
 				<label for="Primer nombre">Primer nombre</label>
@@ -111,7 +108,16 @@
 		<div class="row">
 			<div class="form-group col-md-6">
 				<label for="Ocupación">Ocupación</label>
-                <input name="ocupacion" type="text" value="<?php echo $datoact[0]['ocuactfam'] ?>"class="form-control">
+				<select name="ocupacion" class="form-control">
+               		<option value=0> Seleccione una opcion </option>
+					<?php 
+					for ($i=0; $i < count($ocup); $i++){
+					?>
+            
+					<option value="<?= $ocup[$i]['codval'] ?>" ><?= $ocup[$i]['nomval'] ?></option>
+            
+					<?php } ?>
+				</select>
             </div>
 			<div class="form-group col-md-6">
 				<label for="Etnia">Etnia</label>
@@ -150,6 +156,7 @@
 </div>
 			<div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Guardar">
+                <a href="home.php?var=8&idf=<?= $datoact[0]['idfamiliaper']  ?>&id=<?= $id; ?>" class="btn btn-primary">Volver</a>
             </div>
         </div>
 	</form>

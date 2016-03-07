@@ -5,8 +5,28 @@
 	$datosfamper = new mdatosfam();
 
 	$id 	= isset($_GET["id"]) ? $_GET["id"]:NULL;
+	$idf	= isset($_GET["idf"]) ? $_GET["idf"]:NULL;
 
-	$dato1 	= $datosfamper->selper1($id);
+
+	$dato1 	= $datosfamper->selper1($idf);
+	$familiares = $datosfamper->seleccionar_familiares_persona($id);
+
+	function getValorFam($valor_fam, $datosfamper)
+	{
+		$nomvalor = $datosfamper->datos_valor($valor_fam);
+		return $nomvalor[0]['nomval'];
+	}
+
+
+	function getNombre($familiares)
+	{
+		$nombre = "";
+
+		$nombre = $familiares[0]['pnomfam'] . " " . $familiares[0]['papefam'];
+
+		return $nombre;
+	}
+
 
 	if ($dato1[0]['numdocfam']) 
 	{
@@ -54,9 +74,9 @@
 		$sapefam	= "Sin registro";
 	}
 
-	if ($dato1[0]['fecnamfam']) 
+	if ($dato1[0]['fecnacfam']) 
 	{
-		$fechanac	= $dato1[0]['fecnamfam'] . " Edad: " . $datosfamper->calcular_edad($dato1[0]['fecnamfam']) ;
+		$fechanac	= $dato1[0]['fecnacfam'] . " Edad: " . $datosfamper->calcular_edad($dato1[0]['fecnacfam']) ;
 	}
 	else
 	{
@@ -65,8 +85,7 @@
 
 	if ($dato1[0]['genfam']) 
 	{
-		$verGenFam   = $ins->get_valor($dato1[0]['genfam']);
-		$genfam	= $verGenFam[0]['nomval'];
+		$genfam	= getValorFam($dato1[0]['genfam'], $datosfamper);
 	}
 	else
 	{
@@ -75,8 +94,7 @@
 
 	if ($dato1[0]['geslanfam']) 
 	{
-		$verGesLanFam   = $ins->get_valor($dato1[0]['geslanfam']);
-		$geslanfam	= $verGesLanFam[0]['nomval'];
+		$geslanfam	= getValorFam($dato1[0]['geslanfam'], $datosfamper);
 	}
 	else
 	{
@@ -85,8 +103,7 @@
 
 	if ($dato1[0]['nivescfam']) 
 	{
-		$verNivEsc   = $ins->get_valor($dato1[0]['nivescfam']);
-		$nivescfam	= $verNivEsc[0]['nomval'];
+		$nivescfam	= getValorFam($dato1[0]['nivescfam'], $datosfamper);
 	}
 	else
 	{
@@ -95,7 +112,7 @@
 
 	if ($dato1[0]['ultgracurfam']) 
 	{
-		$ultgracurfam 	= $$dato1[0]['ultgracurfam'];
+		$ultgracurfam 	= $dato1[0]['ultgracurfam'];
 	}
 	else
 	{
@@ -104,8 +121,7 @@
 
 	if ($dato1[0]['ocuactfam']) 
 	{
-		$verOcupacionActual   = $ins->get_valor($dato1[0]['ocuactfam']);
-		$ocupacionActual	= $verOcupacionActual[0]['nomval'];
+		$ocupacionActual	= getValorFam($dato1[0]['ocuactfam'], $datosfamper);
 	}
 	else
 	{
@@ -114,8 +130,7 @@
 
 	if ($dato1[0]['etniaper']) 
 	{
-		$verEtnia   = $ins->get_valor($dato1[0]['etniaper']);
-		$etnia		= $verEtnia[0]['nomval'];
+		$etnia		= getValorFam($dato1[0]['etniaper'], $datosfamper);
 	}
 	else
 	{
@@ -124,8 +139,7 @@
 
 	if ($dato1[0]['parperfam']) 
 	{
-		$verParentesco   = $ins->get_valor($dato1[0]['parperfam']);
-		$parentesco		 = $verParentesco[0]['nomval'];
+		$parentesco		 = getValorFam($dato1[0]['parperfam'], $datosfamper);
 	}
 	else
 	{

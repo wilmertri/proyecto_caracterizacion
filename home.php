@@ -316,6 +316,10 @@
           {
 				      include("vista/educacion/vtbopcionnomatricula1.php");
           }
+          elseif ($variable==120) 
+          {
+              include("vista/composicionfamiliar/vlist_familiares.php");
+          }
           else
           {
               echo "<h1>Página no encontrada</h1>";

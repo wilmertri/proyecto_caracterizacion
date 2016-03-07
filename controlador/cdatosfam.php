@@ -2,6 +2,7 @@
 	include ("modelo/mdatosfam.php");
 	$ins = new mdatosfam();
 	
+	$idfamper 		= isset($_POST["idfamper"]) ? $_POST["idfamper"]:NULL;
 	$documento 		= isset($_POST["documento"]) ? $_POST["documento"]:NULL;
 	$pnombre 		= isset($_POST["primernombre"]) ? $_POST["primernombre"]:NULL;
 	$snombre 		= isset($_POST["segundonombre"]) ? $_POST["segundonombre"]:NULL;
@@ -20,6 +21,7 @@
 	$estactual		= isset($_POST["estactual"]) ? $_POST["estactual"]:NULL;
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
+	$idf			= isset($_GET["idf"]) ? $_GET["idf"]:NULL;
 
 	$dato	= $ins	->selper();
 	$dato1 	= $ins	->selper1($id);
@@ -30,33 +32,47 @@
 	$etnia 	= $ins	->valor	(10);
 	$discp 	= $ins	->valor	(12);
 	$estactual = $ins ->valor(24);
+	$ocup 	= $ins	->valor	(31);
 	$sissal = $ins->get_sistema_salud();
+
+	$datoact = $ins	->selper1($idf);
 	
 	if ($actu) {
-		if ($genero==0) {
-			$genero = $dato1[0]['genfam'];
+		if ($genero==0) 
+		{
+			$genero = $datoact[0]['genfam'];
 		}
-		if ($gestolac==0) {
-			$gestolac = $dato1[0]['geslanfam'];
+		if ($gestolac==0) 
+		{
+			$gestolac = $datoact[0]['geslanfam'];
 		}
-		if ($nescolaridad==0) {
-			$nescolaridad = $dato1[0]['nivescfam'];
+		if ($nescolaridad==0) 
+		{
+			$nescolaridad = $datoact[0]['nivescfam'];
 		}
-		if ($etnia==0) {
-			$etnia = $dato1[0]['etniaper'];
+		if ($etniaper==0) 
+		{
+			$etniaper = $datoact[0]['etniaper'];
 		}
-		if ($parentesco==0) {
-			$parentesco = $dato1[0]['parperfam'];
+		if ($parentesco==0) 
+		{
+			$parentesco = $datoact[0]['parperfam'];
+		}
+		if ($ocupacion==0) 
+		{
+			$ocupacion = $datoact[0]['ocuactfam'];
 		}
 	}
 	
 	// Actualizar datos
-	if($documento && $pnombre && $snombre && $papellido && $sapellido && $ultgradocur && $ocupacion  && $actu) {
-		$ins -> updper($documento , $pnombre , $snombre , $papellido , $sapellido , $fnacimiento , $genero , $gestolac, $nescolaridad , $ultgradocur , $ocupacion , $etniaper, $parentesco);
+	if($idfamper && $documento && $pnombre && $snombre && $papellido && $ultgradocur && $actu) 
+	{
+		$ins -> updper($idfamper, $documento , $pnombre , $snombre , $papellido , $sapellido , $fnacimiento , $genero , $gestolac, $nescolaridad , $ultgradocur , $ocupacion , $etniaper, $parentesco);
 	}
 	// Insertar datos
-	if($documento && $pnombre && $snombre && $papellido && $sapellido && $fnacimiento && $genero && $nescolaridad && $ultgradocur && $ocupacion && $etniaper && $parentesco && $id && !$actu)
+	if($documento && $pnombre && $papellido && $fnacimiento && $genero && $nescolaridad && $ultgradocur && $parentesco && $id && !$actu)
 	{ 
+
 		$ins-> insper($documento, $pnombre, $snombre, $papellido, $sapellido, $fnacimiento, $genero, $gestolac, $nescolaridad, $ultgradocur, $ocupacion, $etniaper, $parentesco, $id);
 	}
 ?>

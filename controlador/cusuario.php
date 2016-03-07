@@ -21,11 +21,12 @@
 		
 		$datousuario = $ins->selusu1($id);
 
-		if($documento && $usuario && $dependencia && $cargo && $telefono && $perfil && $cargo && $actu) 
+		if($documento && $usuario && $perfil && $actu) 
 		{
 			$ins->updusu($documento,$usuario,$dependencia,$cargo,$telefono,$perfil,$cargo);  // actualizar datos
 		}	
-			if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $perfil && $cargo && !$actu) // insertar datos // cuando es ! es para negar  
+
+		if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $perfil && $cargo && !$actu) // insertar datos // cuando es ! es para negar  
 		{
 			$ins->insusu($documento,$usuario,$dependencia,$cargo,sha1($password),$telefono,$perfil,$cargo); 
 		}

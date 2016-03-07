@@ -9,7 +9,7 @@
 	include("functions.php");
 	class mtbusuario extends Funciones_generales
 		{
-	 	function mtbusuario(){} // CRUD - ESTO ES LA C= CREAR
+	 	function mtbusuario(){} // CRUD - ESTO ES LA C= CREATE
 
 		function insusu($documento,$nombre,$dependencia,$cargo,$password,$telefono,$perfil) // Datos de cada campo
 		{			//insper insertar persona y el orden si afecta
@@ -17,9 +17,9 @@
 			$this -> cons($sql);
 		}
 			
-		function updusu ($documento,$nombre,$dependencia,$cargo,$telefono,$perfil) // CRUD - ESTO ES LA U= actualizar
+		function updusu ($documento,$nombre,$dependencia,$cargo,$telefono,$perfil) // CRUD - ESTO ES LA U= Update
 		{
-			$sql= "UPDATE tbusuario SET documento='".$documento."' , nombre='".$nombre."', depusu='".$dependencia."', carusu='".$cargo."', telusu='".$telefono."', perfil='".$perfil."' where documento='".$documento."' ;";	
+			$sql= "UPDATE tbusuario SET nombre='".$nombre."', depusu='".$dependencia."', carusu='".$cargo."', telusu='".$telefono."', perfil='".$perfil."' where documento='".$documento."' ;";	
 			$this-> cons($sql); // aca es importante que este ordenado, para que se guarde en el mismo orden y con el this es la funcion con la que le ordeno que haga o cite lo que nobre antes
 		}
 		// para la contraseña, hacer el cambio

@@ -90,8 +90,6 @@
 				<select name="niveldeescolaridad"class="form-control">
                		<option value=0> Seleccione una opcion </option>
 					<?php 
-					//Select
-					//$dat1 = $ins->selpar();
 					for ($i=0; $i < count($nesc); $i++){
 					?>
             
@@ -107,16 +105,24 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-md-6">
-			<label for="Ocupacion">Ocupacion</label>
+				<label for="Ocupacion">Ocupacion</label>
                 <input name="ocupacion" type="text" class="form-control">
+                <select name="ocupacion" class="form-control">
+               		<option value=0> Seleccione una opcion </option>
+					<?php 
+					for ($i=0; $i < count($ocup); $i++){
+					?>
+            
+					<option value="<?= $ocup[$i]['codval'] ?>" ><?= $ocup[$i]['nomval'] ?></option>
+            
+					<?php } ?>
+				</select>
             </div>
 			<div class="form-group col-md-6">
 			<label for="Etnia">Grupo poblacional</label>
 				<select name="etnia"class="form-control">
 				<option value=0> Seleccione una opcion </option>>
 					<?php 
-					//Select
-					//$dat1 = $ins->selpar();
 					for ($i=0; $i < count($etnia); $i++){
 					?>
             

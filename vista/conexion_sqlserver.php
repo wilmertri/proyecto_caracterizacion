@@ -10,27 +10,24 @@ class conexion_sqlserver{
 
 	function conectarBD2()
 	{
-		include("configuracion1.php");
-		$this->link = mysql_connect($serv_ms_db,$usu_ms_db,$pass_ms_db);
-		if (!$this->link)
+		include("../controlador/configuracion.php");
+		//$this->link = mysql_connect($serv_ms_db,$usu_ms_db,$pass_ms_db);
+		$this->link = new mysqli(HOST, USER, PASSWORD, DATABASE);
+		if (!$this->link->connect_error)
 		{
 			die("<h5>No se logr&oacute; realizar la conexi&oacute;n</h5>");
-		}
-		$db= mysql_select_db($db_ms);
-		if (!$db)
-		{
-			echo "no se puede conectar db";
 		}
 	}
 
 	function conectarBD()
 	{
-		include("configuracion1.php");
-		$this->link = mysql_connect($serv_ms_db,$usu_ms_db,$pass_ms_db);
-		if (!$this->link) {
-			die("<h5>No se logr&oacute; realizar la conexi&oacute;n: " . mssql_error()."</h5>");
+		include("../controlador/configuracion.php");
+		//$this->link = mysql_connect($serv_ms_db,$usu_ms_db,$pass_ms_db);
+		$this->link = new mysqli(HOST, USER, PASSWORD, DATABASE);
+		if ($this->link->connect_error)
+		{
+			die("<h5>No se logr&oacute; realizar la conexi&oacute;n</h5>");
 		}
-		mysql_select_db($db_ms) or die('No pudo seleccionarse la BD paila.');
 	}
 
 	function desconectarBD2()
@@ -71,23 +68,34 @@ $arrayResultado[] = $linea;
 		return $arrayResultado;
 	}
 
-	function ejecutarConsulta($consulta, $op)
-	{
-		$this->resultado = mysql_query($consulta) or die("La consulta fall&oacute;: ".mysql_error());
-		//echo $op;
-		if ($op==0){
-			while ($linea = mysql_fetch_array($this->resultado))
+	function ejecutarConsulta($con, $op) {
+			$this -> resultado = $this ->link->query($con) or die("La consulta fallo: ". $this ->link->error);
+			//var_dump($this -> ultimoid);
+			//echo "ID: " . $this -> ultimoid;
+			//$res = $this -> resultado->fetch_assoc();
+
+			if($op == 0) 
+            {
+                while ($linea = $this -> resultado->fetch_assoc()) 
+                {
+					$arrayResultado[] = $linea;
+				}
+			} 
+			else 
 			{
-				$arrayResultado[] = $linea;
+				$this->ultimoid = $this->mysqli->insert_id;
+				return $this->ultimoid;
+				$arrayResultado[] = 0;
 			}
-		}else{
-			$arrayResultado[] =0;
+			
+			$resarr = isset ($arrayResultado) ? $arrayResultado: NULL;
+			if($resarr) 
+			{
+				return $arrayResultado;
+			}
 		}
-		$resarr = isset($arrayResultado) ? $arrayResultado:NULL;
-		if($resarr){
-			return $arrayResultado;
-		}
-	}
+
+
 
 	function ejecutarConsultaUpd($consulta)
 	{

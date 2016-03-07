@@ -6,63 +6,61 @@
 	<table class="table" cellspacing="0" width="100%">
 		<tr>
 			<td>Documento:</td>
-			<td><?= $numdocfam; ?></td>
+			<td><strong><?= $numdocfam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Primer Nombre: </td>
-			<td><?= $pnomfam; ?></td>
+			<td><strong><?= $pnomfam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Segundo Nombre: </label> </td>
-			<td> <?= $snomfam; ?></td>
+			<td><strong> <?= $snomfam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Primer Apellido: </td>
-			<td><?= $papefam; ?></td>
+			<td><strong><?= $papefam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Segundo Apellido:</td>
-			<td><?= $sapefam; ?></td>
+			<td><strong><?= $sapefam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Fecha de Nacimiento:</td>
-			<td><?= $fechanac; ?></td>
+			<td><strong><?= $fechanac; ?> Años</strong></td>
 		</tr>
 		<tr>
 			<td> Genero: </td>
-			<td> <?= $genfam; ?></td>	
+			<td><strong> <?= $genfam; ?></strong></td>	
 		</tr>
 		<tr>
 			<td> Gestante o Lactante: </td>
-			<td> <?= $geslanfam; ?></td>	
+			<td><strong> <?= $geslanfam; ?></strong></td>	
 		</tr>
 		<tr>
 			<td> Nivel de Escolaridad: </td>
-			<td> <?= $nivescfam; ?></td>	
+			<td><strong> <?= $nivescfam; ?></strong></td>	
 		</tr>
 		<tr>
 			<td> Ultimo Grado Cursado: </td>
-			<td><?= $ultgracurfam; ?></td>
+			<td><strong><?= $ultgracurfam; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Ocupacion: </td>
-			<td><?= $ocupacionActual; ?></td>
+			<td><strong><?= $ocupacionActual; ?></strong></td>
 		</tr>
 		<tr>
 			<td> Grupo poblacional: </td>
-			<td> <?= $etnia; ?></td>	
+			<td><strong> <?= $etnia; ?></strong></td>	
 		</tr>
 		<tr>
 			<td> Parentesco:</td>
-			<td> <?= $parentesco; ?></td>	
+			<td><strong> <?= $parentesco; ?></strong></td>	
 		</tr>
 		<tr>
 			<td align = "center">
-				<a href ="home.php?var=7&id=<?= $dato1[0]["numdocfam"]; ?>" class="btn btn-success">Editar</a>
-				<a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a>
+				<a href ="home.php?var=7&idf=<?= $dato1[0]["idfamiliaper"]; ?>&id=<?= $id; ?>" class="btn btn-success">Editar</a>
+				<a href="home.php?id=<?= $id ?>&var=120" class="btn btn-success">Volver</a>
 			</td>
-
-			<td align = "center"><a href ="home.php?var=36&famper=1&id=<?= $dato1[0]["numdocfam"]; ?>" class="btn btn-success">Discapacidad</a></td>
 		</tr>
 	</table>
 </div>	

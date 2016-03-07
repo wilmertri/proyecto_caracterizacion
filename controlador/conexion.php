@@ -1,37 +1,71 @@
 <?php
 	class conexion {
+		
 		var $link;
 		var $resultado;
+		var $acentos;
+		var $mysqli;
+
+		protected $ultimoid = "";
+
 		
-		function conexion() {} // Constructor para inicializar clase
-		function conectarBD() {
-			include("configuracion.php");
-			$this -> link = mysql_connect ($serv_bd, $usu_bd, $pass_bd);
-			if(!$this -> link) {
+		public function conectarBD() 
+		{
+			include_once("configuracion.php");
+
+			//$this -> link = mysql_connect ($serv_bd, $usu_bd, $pass_bd);
+
+			$this -> mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+			
+			if($this->mysqli->connect_error) 
+			{
 				die("<h4> No se logro conectar</h4>");
 			}
+			/*
 			$bd2 = mysql_select_db($bd);
 			if(!$bd2) {
 				echo "No se puede conectar a la BD";
 			}
-			$acentos = mysql_query("SET NAMES 'utf8'");
+			*/
+			$acentos = $this -> mysqli->query("SET NAMES 'utf8'");
 		}
-		function desconectarBD() {
-			mysql_close($this -> link);
+		
+		public function desconectarBD() 
+		{
+			$this->mysqli->close();
 		}
+		
 		function ejeCon($con, $op) {
-			$this -> resultado = mysql_query($con) or die("La consulta fallo: ". mysql_error());
-			if($op == 0) {
-				while ($linea = mysql_fetch_array($this -> resultado)) {
+			$this -> resultado = $this -> mysqli->query($con) or die("La consulta fallo: ". $this -> mysqli->error);
+			//var_dump($this -> ultimoid);
+			//echo "ID: " . $this -> ultimoid;
+			//$res = $this -> resultado->fetch_assoc();
+
+			if($op == 0) 
+            {
+                while ($linea = $this -> resultado->fetch_assoc()) 
+                {
 					$arrayResultado[] = $linea;
 				}
-			} else {
+			} 
+			else 
+			{
+				$this->ultimoid = $this->mysqli->insert_id;
+				return $this->ultimoid;
 				$arrayResultado[] = 0;
 			}
+			
 			$resarr = isset ($arrayResultado) ? $arrayResultado: NULL;
-			if($resarr) {
+			if($resarr) 
+			{
 				return $arrayResultado;
 			}
 		}
+
+		public function getUltimoId()
+		{
+			return $this->ultimoid;
+		}
+
 	}
 ?>

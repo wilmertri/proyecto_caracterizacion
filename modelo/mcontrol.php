@@ -8,7 +8,7 @@
 
 	function verper($usu,$pass)
 	{
-		$c = "SELECT * FROM tbusuario WHERE documento ='".$usu."' AND password = '".$pass."';";
+		$c = "SELECT * FROM tbusuario WHERE documento ='$usu' AND password = '$pass';";
 		$conexionBD = new conexion();
 		$conexionBD -> conectarBD();
 		$datos = $conexionBD -> ejeCon($c,0);
